@@ -28,6 +28,26 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
  * 6 = (2,2,2) (2,2,1,1) 6개 (2,1,1,1,1) 5개 (1,1,1,1,1,1) 1개 -> 1 + 6 + 5 + 1
  * 7 = (2,2,2,1) 4개 (2,2,1,1,1) 10개 (2,1,1,1,1,1) 6개 (1,1,1,1,1,1,1) -> 4 + 10 + 6 + 1 
  */
-var climbStairs = function(n) {
+// var climbStairs = function(n) {
+//     var a = 1;
+//     var b = 0;
+//     var temp;
 
+//     while(n >= 0) {
+//         temp = a;
+//         a = a + b;
+//         b = temp;
+//         n --;
+//     }
+//     console.log(b);
+// };
+
+var climbStairs = function(n) {
+    if (n < 3) {
+        return n
+    } else {
+        return (climbStairs(n - 1) + climbStairs(n - 2));
+    }
 };
+
+console.log(climbStairs(7));
