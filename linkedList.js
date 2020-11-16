@@ -1,3 +1,5 @@
+// Create Node to be linked
+// Whenever we create new node, we instanciating.
 class Node {
     constructor(data, next = null) {
         this.data = data;
@@ -12,7 +14,6 @@ class LinkedList {
     }
 
     // Insert first node
-
     insertFirst(data) {
         this.head = new Node(data, this.head);
     }
