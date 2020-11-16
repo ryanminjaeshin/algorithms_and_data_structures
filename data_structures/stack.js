@@ -11,5 +11,24 @@ class Stack {
     }
 
     // pop
+    pop () {
+        if (this.size === 0) {
+            return null;
+        }
+        var removed = this.storage[this.size];
+        delete this.storage[this.size];
+        this.size --;
+        return removed;
+    }
 
 }
+
+const stack = new Stack();
+
+stack.push('cat')
+stack.push('dog')
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+
+console.log(stack);
