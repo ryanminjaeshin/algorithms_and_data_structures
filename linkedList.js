@@ -1,5 +1,17 @@
+/*-----------------------------------*/
+
+//         TIME COMPLEXITY
+
+//                 AVERAGE  | WORST
+//  ACCESS:          Θ(n)   |  Θ(n)
+//  SEARCH:          Θ(n)   |  Θ(n)
+//  INSERTION:       Θ(1)   |  Θ(1)
+//  DELETION:        Θ(1)   |  Θ(1)
+
+/*-----------------------------------*/
 // Create Node to be linked
 // Whenever we create new node, we instanciating.
+
 class Node {
     constructor(data, next = null) {
         this.data = data;
@@ -47,7 +59,7 @@ class LinkedList {
             return;
         }
 
-        // if first index 
+        // if first index
         if (index === 0) {
             this.insertFirst(data);
             return;
@@ -71,7 +83,7 @@ class LinkedList {
             count ++;
             current = current.next; // Node after index
         }
-        
+
         // Attach current to node.next
         node.next = current;
         // Attach node to previous.next
