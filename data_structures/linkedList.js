@@ -89,7 +89,7 @@ class LinkedList {
         // Attach node to previous.next
         previous.next = node;
 
-        //        [previois][previous.next] -> [node]-[node.next] -> [current]-[current.next]
+        //        [previous][previous.next] -> [node]-[node.next] -> [current]-[current.next]
         // INDEX               1                         2                      3
 
         this.size ++;
