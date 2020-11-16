@@ -16,6 +16,10 @@ class LinkedList {
 
     // Insert first node
 
+    insertFirst(data) {
+        this.head = new Node(data, this.head);
+    }
+
     // Insert last node
 
     // Insert at index
