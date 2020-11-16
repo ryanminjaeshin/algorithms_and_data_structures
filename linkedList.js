@@ -135,6 +135,13 @@ class LinkedList {
             current = current.next;
         }
     }
+
+    // Clear list
+    clearList () {
+        this.head = null;
+        this.size = 0;
+        return;
+    }
 }
 
 const ll = new LinkedList();
@@ -144,4 +151,5 @@ ll.insertFirst(300);
 ll.insertLast(400);
 ll.insertAt(500, 2)
 ll.removeAt(0);
+ll.clearList();
 ll.printData();
