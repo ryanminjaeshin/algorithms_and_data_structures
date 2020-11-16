@@ -5,9 +5,6 @@ class Node {
     }
 }
 
-// const node = new Node(100);
-// console.log(node);
-
 class LinkedList {
     constructor() {
         this.head = null;
@@ -26,5 +23,18 @@ class LinkedList {
 
     // Get at index
 
-    // Get data
+    // Print data
+    printData() {
+        let current = this.head;
+        while(current) {
+            console.log(current.data);
+            current = current.next;
+        }
+    }
 }
+
+const ll = new LinkedList();
+ll.insertFirst(500);
+ll.insertFirst(300);
+ll.insertFirst(200);
+ll.printData();
