@@ -179,23 +179,6 @@ class LinkedList {
 
 }
 
-var reverseLinkedList = function(linkedlist) {
-    var node = linkedlist;
-    var previous = null;
-
-    while(node) {
-      // save next or you lose it!!!
-      var save = node.next;
-      // reverse pointer
-      node.next = previous;
-      // increment previous to current node
-      previous = node;
-      // increment node to next node or null at end of list
-      node = save;
-    }
-    return previous;   // Change the list head !!!
-}
-
 let ll = new LinkedList();
 ll.insertFirst(5);
 ll.insertFirst(4);
@@ -203,6 +186,5 @@ ll.insertFirst(3);
 ll.insertFirst(2);
 ll.insertFirst(1);
 ll.printData()
-ll = reverseLinkedList(ll);
-console.log(ll);
+
 
