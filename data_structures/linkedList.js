@@ -154,14 +154,55 @@ class LinkedList {
         this.size = 0;
         return;
     }
+
+    getSize() {
+        let count = 0;
+        let current = this.head;
+
+        while(current) {
+            count ++;
+            current = current.next;
+        }
+        console.log(count);
+    }
+
+    getLast() {
+        let current = this.head;
+
+        if (current) {
+          while (current.next) {
+            current = current.next;
+          }
+        }
+        console.log(current);
+      }
+
 }
 
-const ll = new LinkedList();
-ll.insertFirst(100);
-ll.insertFirst(200);
-ll.insertFirst(300);
-ll.insertLast(400);
-ll.insertAt(500, 2)
-ll.removeAt(0);
-ll.clearList();
-ll.printData();
+var reverseLinkedList = function(linkedlist) {
+    var node = linkedlist;
+    var previous = null;
+
+    while(node) {
+      // save next or you lose it!!!
+      var save = node.next;
+      // reverse pointer
+      node.next = previous;
+      // increment previous to current node
+      previous = node;
+      // increment node to next node or null at end of list
+      node = save;
+    }
+    return previous;   // Change the list head !!!
+}
+
+let ll = new LinkedList();
+ll.insertFirst(5);
+ll.insertFirst(4);
+ll.insertFirst(3);
+ll.insertFirst(2);
+ll.insertFirst(1);
+ll.printData()
+ll = reverseLinkedList(ll);
+console.log(ll);
+

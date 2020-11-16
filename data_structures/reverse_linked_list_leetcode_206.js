@@ -7,24 +7,20 @@ Example: Input: 1->2->3->4->5->NULL
          Output: 5->4->3->2->1->NULL
 */
 
-// Plan
-// Create empty ll
-// attach node to the ll in reverse order.
 
-var reverseList = function(head) {
+var reverseLinkedList = function(linkedlist) {
+  var node = linkedlist;
+  var previous = null;
 
-};
-
-class Node {
-  constructor(data, next = null) {
-    this.data = data;
-    this.next = next;
+  while(node) {
+    // save next or you lose it!!!
+    var save = node.next;
+    // reverse pointer
+    node.next = previous;
+    // increment previous to current node
+    previous = node;
+    // increment node to next node or null at end of list
+    node = save;
   }
-}
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-    this.size = 0;
-  }
+  return previous;   // Change the list head !!!
 }
