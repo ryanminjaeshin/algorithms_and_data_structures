@@ -16,10 +16,30 @@ class LinkedList {
     // Insert first node
     insertFirst(data) {
         this.head = new Node(data, this.head);
+        this.size ++;
     }
 
     // Insert last node
+    insertLast(data) {
+        // create new node to insert at last
+        let node = new Node(data);
+        let current;
 
+        // if empty, put the node to the head
+        if (!this.head) {
+            this.head = node;
+        } else {
+            // loop through the linkedList until the next is null
+            current = this.head;
+            while (current.next) {
+                current = current.next;
+            }
+            // Insert the node to the last node
+            current.next = node;
+        }
+
+        this.size ++
+    }
     // Insert at index
 
     // Get at index
@@ -38,4 +58,5 @@ const ll = new LinkedList();
 ll.insertFirst(500);
 ll.insertFirst(300);
 ll.insertFirst(200);
+ll.insertLast(400);
 ll.printData();
