@@ -14,6 +14,13 @@ Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-
              Not 7-1 = 6, as selling price needs to be larger than buying price.
 */
 
+/*
+I: Array
+O: Integer (largest diff (in order / negative))
+C:?
+Edge case:
+Example: [1,2,3,4,5] -> 4 (1 - 5)
+*/
 var maxProfit = function(prices) {
     
 };
