@@ -40,3 +40,19 @@ var containsDuplicate = function(nums) {
 };
 
 containsDuplicate([1,2,3])
+
+// Another solution
+
+var containsDuplicate = function(nums) {
+    var storage = {};
+    for (var i = 0; i < nums.length; i ++) {
+      let anum = nums[i]
+      if (storage[anum]) {
+        return true
+      } else {
+        storage[anum] = true;
+  
+      }
+    }
+    return false;
+  };
