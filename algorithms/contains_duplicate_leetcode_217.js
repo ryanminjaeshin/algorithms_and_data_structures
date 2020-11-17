@@ -23,5 +23,20 @@ Output: true
  */
 
 var containsDuplicate = function(nums) {
-    
+    var storage = new Map();
+    for (var i = 0; i < nums.length; i ++) {
+        if(storage[nums[i]] === undefined) {
+            storage[nums[i]] = 1;
+        } else {
+            storage[nums[i]] += 1;
+        }
+    }
+
+    if (Object.values(storage).sort((a,b) => b - a)[0] > 1) {
+      return true;
+    } else {
+      return false;
+    }
 };
+
+containsDuplicate([1,2,3])
