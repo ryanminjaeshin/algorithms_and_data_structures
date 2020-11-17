@@ -23,18 +23,13 @@ Example: [1,2,3,4,5] -> 4 (1 - 5)
 
 PLAN
 
-Sort the price array,
-From the sorted array, 
-if (origianl array.indexof(length - i - 0) > original array.indexOf(i)
-subtract (length - i - 0) - i // return result 
+iterate two times, save every diff of the element without duplication
+save the result in the array.
+sort the result array
+return the 0 index with absolute value
 */
 
 
 var maxProfit = function(prices) {
-    var len = prices.length;
-    var sortedPrice = prices.sort();
 
-    for(var i = 0; i < len; i ++) {
-        
-    }
 };
