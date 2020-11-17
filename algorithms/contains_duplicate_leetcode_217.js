@@ -14,6 +14,14 @@ Output: true
 
 */
 
+/**
+ * I: Array of integers
+ * O: boolean, true if there is duplicate
+ * C: None
+ * Edge case: None
+ * Example: [1,2,3] -> false, [1,2,2,3] -> true
+ */
+
 var containsDuplicate = function(nums) {
     
 };
