@@ -31,5 +31,21 @@ return the 0 index with absolute value
 
 
 var maxProfit = function(prices) {
-
+    var resultArr = [];
+    for (var i = 0; i < prices.length; i ++) {
+        for (var j = i + 1; j < prices.length; j ++) {
+            var profit = prices[i] - prices[j];
+            if (profit < 0) {
+                resultArr.push(profit);
+            }
+        }
+    }
+    if (resultArr.length === 0) {
+      return 0;
+    }
+    var sortResult = resultArr.sort((a, b) => a - b)
+    console.log(sortResult)
+    return Math.abs(sortResult[0]);
 };
+
+maxProfit([1,2,4,7,11])
