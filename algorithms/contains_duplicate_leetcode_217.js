@@ -56,3 +56,10 @@ var containsDuplicate = function(nums) {
     }
     return false;
   };
+
+  // Another solution
+
+var containsDuplicate = function(nums) {
+    var testSet = new Set(nums);
+    return testSet.size !== nums.length;
+}
