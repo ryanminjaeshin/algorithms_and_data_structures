@@ -15,15 +15,16 @@ You can return the answer in any order.
  * Edge case: none
  * Example: [1,2,3,4], 7 -> [2,3]
  */
+
 var twoSum = function(nums, target) {
-    // create empty array;
+    var comp = new Map();
+    var len = nums.length;
 
-    // iterate over the nums array
-    //  push i to empty array
-    //  subtract array[i] from target
-    //  find the indexof above value.
-    //  if it is -1, do nothing
-    //  if it is not -1, push to the array and return
-
-    
+    for (var i = 0; i < len; i ++) {
+      if (comp[nums[i]] >= 0) {
+        return [comp[nums[i]], i]
+      }
+      comp[target - nums[i]] = i
+    }
+    return [];
 };
