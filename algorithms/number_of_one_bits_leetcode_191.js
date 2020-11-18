@@ -27,6 +27,13 @@ Output: 31
 Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one '1' bits.
 */
 
+/**
+ * I: Integers with 0,1
+ * O: Number of 1
+ * C: None
+ * Edge case: None
+ * Example: 11101 -> 4;
+ */
 var hammingWeight = function(n) {
     
 };
