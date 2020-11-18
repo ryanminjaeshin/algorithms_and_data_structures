@@ -34,6 +34,14 @@ Explanation: The input binary string 11111111111111111111111111111101 has a tota
  * Edge case: None
  * Example: 11101 -> 4;
  */
+
+ /**
+  * 
+  * First Solution:
+  * Chnage integer to array, return sum of the element
+  *  
+  */
+
 var hammingWeight = function(n) {
     
 };
