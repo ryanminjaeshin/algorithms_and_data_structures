@@ -43,5 +43,5 @@ Explanation: The input binary string 11111111111111111111111111111101 has a tota
   */
 
 var hammingWeight = function(n) {
-    
+    return n.toString(2).split('').filter(x => x === '1').length
 };
