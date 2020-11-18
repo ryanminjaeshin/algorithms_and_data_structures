@@ -26,6 +26,16 @@ Output: -1
 
  */
 
+/**
+ * I: array of integers
+ * O: integer
+ * C: None
+ * Edge case: None
+ * Example: [1,2,-8,9] -> 9
+ */
+
+
+
 var maxSubArray = function(nums) {
     
 };
