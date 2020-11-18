@@ -33,3 +33,12 @@ var missingNumber = function(nums) {
     }
     return null;
 };
+
+// Another solution
+
+var missingNumber = (nums) => {
+    var len = nums.length;
+    var sum1 = (len * (len + 1)) / 2;
+    var sum2 = nums.reduce((a, b) => a + b);
+    return sum1 - sum2
+}
