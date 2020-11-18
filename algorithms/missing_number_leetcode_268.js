@@ -12,6 +12,24 @@ Output: 2
 Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
 */
 
+
+/**
+ * I: array of integers
+ * O: integer
+ * C: None
+ * Edge case: what if there is no missing integer
+ * Example: [0,1,3] -> 2
+ */
 var missingNumber = function(nums) {
-    
+    var len = nums.length + 1
+    var sortedNums = nums.sort((a, b) => a - b);
+    var compareArr = [...Array(len).keys()];
+    console.log(sortedNums);
+    console.log(compareArr)
+    for (var i = 0; i < compareArr.length; i ++) {
+      if (sortedNums[i] !== compareArr[i]) {
+        return compareArr[i];
+      }
+    }
+    return null;
 };
