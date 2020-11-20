@@ -42,27 +42,10 @@ Example: [1,2,3], 6 -> 2
 
 /* PLAN
 
-1. Create result variable
-2. Sort coins array in ascending order
-3. Create recursing function
-4.  var len = coins.length;
-4.  var largestCoin = coins[len - 1]
-4.  var quotient = Math.floor(amount / largestCoin);
-4.  array.pop();
-4.  if quotient is greater than 1
-4     amount = amount - (quotient * largestCoin);
-4.    result += quotient
-4.    if (amount === 0) -> return result;
-4.    else recurse
-4. else recurse
+DP (Bottom Up Approach)
 
-Return result
 */
 
 var coinChange = function(coins, amount) {
-    var result = 0;
-    var sortedCoins = coins.sort((a, b) => a, b);
-    var recurse (coins, amount)
-    recruse (sortedCoins, amount)
-    return result;
+  
 };
