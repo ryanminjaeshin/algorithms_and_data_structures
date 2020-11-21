@@ -50,10 +50,11 @@ var coinChange = function(coins, amount) {
     var len = amount + 1;
     var dp = new Array(len).fill(len);
     dp[0] = 0;
-    for (var i = 0; i < len; i ++) {
+
+    for (var i = 1; i < len; i ++) {
         for (coin of coins) {
-            if(i - coin >= 0) {
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+            if (i - coin >= 0) {
+                dp[i] = Math.min (dp[i], dp[i - coin] + 1)
             }
         }
     }
