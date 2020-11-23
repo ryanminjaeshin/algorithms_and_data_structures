@@ -34,6 +34,32 @@ Example: [1,5,2,9] -> 14
 
 */
 
+/*
+
+PLAN
+
+create DP array
+
+*/
 var rob = function(nums) {
+    var len = nums.length;
+    var dp = new Array(len);
+
+    if (len === 0) {
+        return 0;
+    }
+
+    if (len === 1) {
+        return nums[0]
+    }
+
+    dp[0] = nums[0];
+    dp[1] = nums[1] > nums[0] ? nums[1] : nums[0];
     
+    for (var i = 2; i < len; i ++) {
+        dp[i] = Math.max(nums[i] + dp[i - 2], dp[i - 1])
+    }
+    return dp[len - 1]
 };
+
+rob([1,2,3,1])
