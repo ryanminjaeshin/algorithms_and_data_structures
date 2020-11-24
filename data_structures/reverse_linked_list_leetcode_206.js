@@ -10,13 +10,14 @@ Example: Input: 1->2->3->4->5->NULL
 
 var reverseList = function(head) {
   let prev = null;
+  let curr = head;
   let next = null;
   
-  while(head !== null) {
-      next = head.next;
-      head.next = prev;
-      prev = head;
-      head = next;
+  while(curr !== null) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
   }
   return prev;
 };
