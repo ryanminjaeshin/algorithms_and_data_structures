@@ -185,6 +185,7 @@ ll.insertFirst(4);
 ll.insertFirst(3);
 ll.insertFirst(2);
 ll.insertFirst(1);
-ll.printData()
+// ll.printData()
+console.log(ll)
 
 
