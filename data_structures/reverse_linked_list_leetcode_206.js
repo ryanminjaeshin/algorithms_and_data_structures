@@ -8,19 +8,15 @@ Example: Input: 1->2->3->4->5->NULL
 */
 
 
-var reverseLinkedList = function(linkedlist) {
-  var node = linkedlist;
-  var previous = null;
-
-  while(node) {
-    // save next or you lose it!!!
-    var save = node.next;
-    // reverse pointer
-    node.next = previous;
-    // increment previous to current node
-    previous = node;
-    // increment node to next node or null at end of list
-    node = save;
+var reverseList = function(head) {
+  let prev = null;
+  let next = null;
+  
+  while(head !== null) {
+      next = head.next;
+      head.next = prev;
+      prev = head;
+      head = next;
   }
-  return previous;   // Change the list head !!!
-}
+  return prev;
+};
