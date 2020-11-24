@@ -46,4 +46,24 @@ class BTS {
 
     searchTree(this.root)
   }
+
+  min() {
+    let currentNode = this.root;
+
+    while(currentNode.left) {
+      currentNode = currentNode.left
+    }
+
+    return currentNode.value;
+  }
+
+  max() {
+    let currentNode = this.root;
+
+    while(currentNode.right) {
+      currentNode = currentNode.right
+    }
+
+    return currentNode.value
+  }
 }
