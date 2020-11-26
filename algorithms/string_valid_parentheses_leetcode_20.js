@@ -32,3 +32,27 @@ Input: s = "{[]}"
 Output: true
 
 */
+
+
+
+var isValid = function(s) {
+    var stack = [];
+    for (var i = 0; i < s.length; i ++) {
+        var bracket = s.charAt(i);
+        if (bracket == '(' || bracket == '{' || bracket == '[') {
+            stack.push(bracket);
+        } else if (bracket === '}' && stack[stack.length - 1] === '{'){
+            stack.pop();
+        } else if (bracket === ']' && stack[stack.length - 1] === '['){
+            stack.pop();
+        } else if (bracket === ')' && stack[stack.length - 1] === '('){
+            stack.pop();
+        } else {
+            return false;
+        }
+    }
+
+    return stack.length === 0
+};
+
+isValid('()')
