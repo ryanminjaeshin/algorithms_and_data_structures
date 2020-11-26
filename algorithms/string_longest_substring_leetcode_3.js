@@ -32,3 +32,27 @@ Output: 0
 
 */
 
+// Plan
+// Save substring & length propery to object. Return the highest value.
+
+var lengthOfLongestSubstring = function(s) {
+    var max = 0;
+    var substring = '';
+
+    for (var i = 0; i < s.length; i ++) {
+        var index = substring.indexOf(s[i]);
+        substring += s[i];
+
+        if (index >= 0) {
+            substring = substring.slice(index + 1);
+        }
+
+        if (substring.length > max) {
+            max = substring.length;
+        }
+    }
+
+    return max;
+};
+
+lengthOfLongestSubstring('dvdf')
