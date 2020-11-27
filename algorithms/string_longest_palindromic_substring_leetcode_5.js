@@ -26,3 +26,18 @@ Output: "a"
 
 */
 
+/*
+
+I: string
+O: string
+C: None
+Edge case: including special characters?
+Example: ahbccba -> bccb
+
+*/
+
+
+
+var longestPalindrome = function(s) {
+    
+};
