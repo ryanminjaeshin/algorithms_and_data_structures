@@ -51,4 +51,13 @@ var longestPalindrome = function(s) {
     lps = s[i];
     }
 
+    // second base case
+    for(var i = 0; i < len; i ++) {
+        if(s[i] === s[i + 1]) {
+            dp[i][i + 1] = true;
+            if(dp[i][i + 1]) {
+            lps = s.slice(i, i + 2);
+            }
+        }
+    }
 };
