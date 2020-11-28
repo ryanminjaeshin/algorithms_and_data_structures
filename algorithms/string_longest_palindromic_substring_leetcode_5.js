@@ -43,21 +43,35 @@ var longestPalindrome = function(s) {
 
     var len = s.length;
 
-    const dp = Array(len).fill(null).map(() => Array(len).fill(false));
+    const dp = Array(len).fill(null).map(()=>Array(len).fill(false));
 
     // first base case
-    for (var i = 0; i < len; i ++) {
-    dp[i][i] = true;
-    lps = s[i];
+    for (var i = 0; i < len; i++) {
+        dp[i][i] = true;
+        lps = s[i];
     }
 
     // second base case
-    for(var i = 0; i < len; i ++) {
-        if(s[i] === s[i + 1]) {
+    for (var i = 0; i < len; i++) {
+        if (s[i] === s[i + 1]) {
             dp[i][i + 1] = true;
-            if(dp[i][i + 1]) {
-            lps = s.slice(i, i + 2);
+            if (dp[i][i + 1]) {
+                lps = s.slice(i, i + 2);
             }
         }
     }
+
+    for (var i = len - 1; i >= 0; i--) {
+        for (var j = i + 2; j < len; j++) {
+            dp[i][j] = dp[i + 1][j - 1] && s[i] === s[j];
+            if (dp[i][j]) {
+                lps = lps.length < (j - i + 1) ? s.slice(i, j + 1) : lps
+            }
+        }
+    }
+
+    return lps
 };
+
+longestPalindrome('abbc')
+//
