@@ -62,3 +62,19 @@ var maxProfit = function(prices) {
     
     return max;
 };
+
+// Recap
+
+var maxProfit = function(prices) {
+    
+    var min = Infinity;
+    var max = 0;
+    
+    for (var i = 0; i < prices.length; i ++) {
+        var price = prices[i]
+        min = Math.min (min, price);
+        max = Math.max (max, price - min);
+    }
+    
+    return max;
+};
