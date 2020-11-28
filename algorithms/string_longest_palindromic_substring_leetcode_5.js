@@ -45,4 +45,10 @@ var longestPalindrome = function(s) {
 
     const dp = Array(len).fill(null).map(() => Array(len).fill(false));
 
+    // first base case
+    for (var i = 0; i < len; i ++) {
+    dp[i][i] = true;
+    lps = s[i];
+    }
+
 };
