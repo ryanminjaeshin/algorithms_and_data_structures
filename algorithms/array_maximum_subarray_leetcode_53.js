@@ -42,3 +42,18 @@ var maxSubArray = function(nums) {
     };
     return Math.max(...nums);
 };
+
+// Recap
+
+var maxSubArray = function(nums) {
+    var len = nums.length;
+    var dp = new Array(len);
+    
+    dp[0] = nums[0];
+    
+    for (var i = 1; i < len; i ++) {
+        dp[i] = Math.max(nums[i], nums[i] + dp[i - 1])
+    }
+    
+  return Math.max(...dp)
+};
