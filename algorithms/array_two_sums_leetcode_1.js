@@ -28,3 +28,20 @@ var twoSum = function(nums, target) {
     }
     return [];
 };
+
+// Recap 
+
+var twoSum = function(nums, target) {
+  var map = new Map();
+  
+  var len = nums.length;
+  
+  for (var i = 0; i < len; i ++) {
+      var num = nums[i]
+      if (map[num] >= 0) {
+          return [i, map[num]]
+      }
+      
+      map[target - num] = i;
+  }
+};
