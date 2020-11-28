@@ -39,5 +39,10 @@ Example: ahbccba -> bccb
 
 
 var longestPalindrome = function(s) {
-    
+    var lps = '';
+
+    var len = s.length;
+
+    const dp = Array(len).fill(null).map(() => Array(len).fill(false));
+
 };
