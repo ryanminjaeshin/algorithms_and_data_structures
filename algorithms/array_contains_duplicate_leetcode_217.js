@@ -63,3 +63,20 @@ var containsDuplicate = function(nums) {
     var testSet = new Set(nums);
     return testSet.size !== nums.length;
 }
+
+// Recap
+
+var containsDuplicate = (nums) => {
+  var map = new Map();
+  var len = nums.length;
+
+  for (var i = 0; i < len; i ++) {
+    var num = nums[i]
+
+    if (map[num]) return true;
+
+    map[num] = true;
+  }
+
+  return false;
+}
