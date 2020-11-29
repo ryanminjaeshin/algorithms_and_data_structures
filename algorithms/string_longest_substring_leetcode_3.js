@@ -56,3 +56,24 @@ var lengthOfLongestSubstring = function(s) {
 };
 
 lengthOfLongestSubstring('dvdf')
+
+
+// recap
+
+var lengthOfLongestSubstring = (s) => {
+    var substring = '';
+    var max = 0;
+    
+    for (var i = 0; i < s.length; i ++) {
+        var index = substring.indexOf(s[i]);
+        substring += s[i];
+        
+        if (index >= 0) {
+            substring = substring.slice(index + 1);
+        }
+        
+        max = Math.max(substring.length, max)
+    }
+    
+    return max;
+};
