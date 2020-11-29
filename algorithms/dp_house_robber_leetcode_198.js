@@ -63,3 +63,23 @@ var rob = function(nums) {
 };
 
 rob([1,2,3,1])
+
+// recap
+
+var rob = function(nums) {
+    if (nums.length === 0) {
+        return 0;
+    }
+    
+    var len = nums.length;
+    var dp = new Array(len);
+    
+    dp[0] = nums[0];
+    dp[1] = nums[0] > nums[1] ? nums[0] : nums[1];
+    
+    for (var i = 2; i < len; i ++) {
+        dp[i] = Math.max(dp[i - 1], nums[i] + dp[i - 2])
+    }
+    
+    return dp[len - 1]
+};
