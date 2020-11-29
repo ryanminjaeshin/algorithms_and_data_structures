@@ -42,3 +42,13 @@ var missingNumber = (nums) => {
     var sum2 = nums.reduce((a, b) => a + b);
     return sum1 - sum2
 }
+
+// Recap 
+
+var missingNumber = function(nums) {
+  var len = nums.length;
+  var sum1 = nums.reduce((a, b) => a + b);
+  var sum2 = ((len) * (len + 1)) / 2
+  
+  return sum2 - sum1;
+};
