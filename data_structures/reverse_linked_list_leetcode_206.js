@@ -21,3 +21,20 @@ var reverseList = function(head) {
   }
   return prev;
 };
+
+// recap
+
+var reverseList = function(head) {
+  var prev = null;
+  var curr = head;
+  var next = null;
+  
+  while(curr) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+  }
+  
+  return prev;
+};
