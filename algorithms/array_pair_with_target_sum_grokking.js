@@ -18,3 +18,41 @@ Explanation: The numbers at index 0 and 2 add up to 11: 2+9=11
 
 */
 
+
+// two pointers
+
+
+const pair_with_targetsum = function(arr, target_sum) {
+    // TODO: Write your code here
+    var left = 0;
+    var right = arr.length - 1;
+
+    while(left < right) {
+        var sum = arr[left] + arr[right];
+
+        if (sum === target_sum) return [left, right];
+        if (sum > target_sum) right --;
+        if (sum < target_sum) left ++;
+    }
+
+    return [-1, -1]
+  }
+
+  pair_with_targetsum([3,5,9,10], 19)
+
+  // Hash table
+
+  const pair_with_targetsum = function(arr, target_sum) {
+    // TODO: Write your code here
+    var map = new Map();
+
+    for (var i = 0; i < arr.length; i ++) {
+
+        if(map[arr[i]] >= 0) return [map[arr[i]], i]
+
+        map[target_sum - arr[i]] = i;
+    }
+    
+    return [-1, -1];
+  }
+  
