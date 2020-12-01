@@ -7,6 +7,7 @@ const pivot = (arr, start = 0, end = arr.length) => {
         // this will be used when we swap the pivot index(start) to swapIdx
     let swapIdx = start;
 
+    // Swap helper function with ES6
     const swap = (arr,i ,j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]
     }
