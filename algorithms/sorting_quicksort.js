@@ -25,6 +25,8 @@ const pivot = (arr, start = 0, end = arr.length) => {
 
     // At the end, swap the pivot index(start) with swapIdx
     swap(arr, start, swapIdx)
+
+    // return swapIdx
     return swapIdx
 }
 
