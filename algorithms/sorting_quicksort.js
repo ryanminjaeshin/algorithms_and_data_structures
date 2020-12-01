@@ -1,7 +1,10 @@
 // Create helper function
 
 const pivot = (arr, start = 0, end = arr.length) => {
+    // set pivot 
     let pviot = arr[start];
+    // set swapIdx
+        // this will be used when we swap the pivot index(start) to swapIdx
     let swapIdx = start;
 
     const swap = (arr,i ,j) => {
@@ -22,5 +25,5 @@ const pivot = (arr, start = 0, end = arr.length) => {
 // Quicksort function
 
 const quicksort = (arr) => {
-    
+
 }
