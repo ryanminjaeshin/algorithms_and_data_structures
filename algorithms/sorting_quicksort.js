@@ -34,5 +34,13 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 // Quicksort function
 
 const quicksort = (arr, left = 0, right = arr.length) => {
+    let pivotIndex = pivot(arr, left, right);
 
+    if (left < right) {
+        quicksort(arr, left, pivotIndex - 1);
+        quicksort(arr, pivotIndex + 1, right);
+    }
+
+    return arr;
+    
 }
