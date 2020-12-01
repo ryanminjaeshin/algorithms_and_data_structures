@@ -1,6 +1,6 @@
 // Create helper function
 
-const pivot = (arr, start = 0, end = arr.length) => {
+const pivot = (arr, start = 0, end = arr.length - 1) => {
     // set pivot 
     let pviot = arr[start];
     // set swapIdx
