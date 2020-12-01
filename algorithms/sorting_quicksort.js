@@ -14,8 +14,11 @@ const pivot = (arr, start = 0, end = arr.length) => {
 
     // Iterate over an array
     for (let i = start + 1; i < arr.length; i ++) {
+        // if the element is smaller than pivot, 
         if (pivot > arr[i]) {
+            // increment swapIdx
             swapIdx ++;
+            // and swap it
             swap(arr, swapIdx, i)
         } 
     }
