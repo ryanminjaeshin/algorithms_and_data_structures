@@ -25,13 +25,13 @@ var hasCycle = function(head) {
     if (!head) return false;
 
     var slow = head;
-    var fast = head.next;
+    var fast = head;
 
     while(fast !== null && fast.next !== null) {
-        if (slow === fast) return true;
 
         slow = slow.next;
         fast = fast.next.next;
+        if (slow === fast) return true;
     }
 
     return false;
