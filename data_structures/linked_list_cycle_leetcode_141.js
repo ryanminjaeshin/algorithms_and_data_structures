@@ -18,3 +18,12 @@ Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed)
 
 */
+
+
+var hasCycle = function(head) {
+
+    if (!head) return false;
+
+    var slow = head;
+    var fast = head.next;
+};
