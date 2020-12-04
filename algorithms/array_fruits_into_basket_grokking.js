@@ -29,6 +29,28 @@ const fruits_into_baskets = function(fruits) {
         map = new Map();
         max = 0;
 
+        for (var windowEnd = 0; windowEnd < len; windowEnd += 1) {
+            var rightFruit = fruits[windowEnd];
+
+            if (!(rightFruit in map)) {
+                map[rightFruit] = 0;
+            }
+
+            map[rightFruit] += 1;
+
+            while (Object.keys(map).length > 2) {
+                var leftFruit = fruits[windowStart];
+                map[leftFruit] -= 1;
+
+                if (map[leftFruit] === 0) {
+                    delete map[leftFruit];
+                }
+
+                windowStart += 1;
+            }
+
+            max = Math.max(max, windowEnd - windowStart + 1);
+        }
 
     return max;
   };
