@@ -25,5 +25,26 @@ const non_repeat_substring = function(str) {
     // TODO: Write your code here
     let windowStart = 0;
         max = 0;
+        len = str.length;
         map = new Map();
+
+        for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+            var rightChar = str[windowEnd];
+
+            if(!(rightChar in map)) {
+                map[rightChar] = 0;
+            }
+
+            map[rightChar] += 1;
+
+            while(Object.values(map).indexOf(2) > -1) {
+                var leftChar = str[windowStart];
+                map[leftChar] -= 1;
+                windowStart += 1;
+            }
+
+            max = Math.max(max, windowEnd - windowStart + 1)
+        }
+
+    return max;
   };
