@@ -32,7 +32,13 @@ const lengthOfLongestSubstringKDistinct = function(s, k) {
 
         for (let windowEnd = 0; windowEnd < s.length; windowEnd += 1) {
             let rightChar = s[windowEnd];
-            if(!(rightChar in map)) map[rightChar] = 0;
+
+            if(!(rightChar in map)) {
+                map[rightChar] = 0;
+            }
+
             map[rightChar] += 1;
+
+
         }
 };
