@@ -23,4 +23,7 @@ Explanation: Longest substrings without any repeating characters are "abc" & "cd
 
 const non_repeat_substring = function(str) {
     // TODO: Write your code here
+    let windowStart = 0;
+        max = 0;
+        map = new Map();
   };
