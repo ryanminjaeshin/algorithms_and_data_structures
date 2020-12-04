@@ -17,6 +17,14 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
  * @param {number[]} nums
  * @return {number}
  */
+
+
 var minSubArrayLen = function(s, nums) {
-    
+    var min = Infinity;
+        sum = 0;
+        windowStart = 0;
+        len = nums.length;
+
+
+        return min;
 };
