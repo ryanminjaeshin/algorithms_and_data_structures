@@ -26,7 +26,7 @@ Explanation: The longest substrings with no more than '3' distinct characters ar
 */
 
 const lengthOfLongestSubstringKDistinct = function(s, k) {
-    let windoeStart = 0;
+    let windowStart = 0;
         maxLength = 0;
         map = new Map();
 
@@ -49,6 +49,8 @@ const lengthOfLongestSubstringKDistinct = function(s, k) {
                 windowStart += 1;
             }
 
-            
+            maxLength = Math.max(maxLength, windowEnd - windowStart + 1)
         }
+
+        return maxLength;
 };
