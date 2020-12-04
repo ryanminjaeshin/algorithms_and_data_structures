@@ -13,7 +13,7 @@ class BTS {
   }
 
   size() {
-    return this.count ++;
+    return this.size;
   }
 
   insert(value) {

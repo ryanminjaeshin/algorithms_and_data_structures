@@ -22,4 +22,29 @@ const make_squares = function(arr) {
     }
     return squares.sort((a,b) => a - b);
 };
-  
+
+
+var make_squares = (arr) => {
+    var len = arr.length;
+    var square = new Array(len);
+    var left = 0;
+    var right = len - 1;
+    var lastIndex = len - 1;
+
+    while(left <= right) {
+        var leftSquare = arr[left] * arr[left];
+        var rightSquare = arr[right] * arr[right];
+
+        if (leftSquare > rightSquare) {
+            square[lastIndex] = leftSquare;
+            left ++;
+        } else {
+            square[lastIndex] = rightSquare;
+            right --;
+        }
+
+        lastIndex --;
+    }
+    
+    return square
+}
