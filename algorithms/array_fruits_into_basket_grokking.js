@@ -23,5 +23,12 @@ This can be done if we start with the second letter: ['B', 'C', 'B', 'B', 'C']
 
 const fruits_into_baskets = function(fruits) {
     // TODO: Write your code here
-    return -1;
+    
+    let windowStart = 0;
+        len = fruits.length;
+        map = new Map();
+        max = 0;
+
+
+    return max;
   };
