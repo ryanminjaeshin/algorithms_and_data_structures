@@ -25,6 +25,19 @@ var minSubArrayLen = function(s, nums) {
         windowStart = 0;
         len = nums.length;
 
+        for (var windowEnd = 0; windowEnd < len; windowEnd += 1) {
 
-        return min;
+            var rightNum = nums[windowEnd]
+
+            sum += rightNum;
+
+            while (sum >= s) {
+                var leftNum = nums[windowStart]
+                min = Math.min(min, windowEnd - windowStart + 1);
+                sum -= leftNum;
+                windowStart += 1;
+            }
+        }
+
+        return min === Infinity ? 0 : min;
 };
