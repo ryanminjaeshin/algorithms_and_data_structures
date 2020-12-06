@@ -117,7 +117,25 @@ class BTS {
   // DFS traverse 
 
   // In-order
+  // left root right
+  dfsInOrder() {
 
+    let result = [];
+
+    const traverse = node => {
+      
+      if (node.left) traverse(node.left)
+
+      result.push(node.value)
+
+      if (node.right) traverse(node.right)
+      
+    }
+
+    traverse(this.root)
+
+    return result
+  }
   // Pre-order
 
   // Post-order
