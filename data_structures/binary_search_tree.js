@@ -158,5 +158,23 @@ class BTS {
   }
 
   // Post-order
+  // left right root
+  dfsPostOrder() {
 
+    let result = [];
+
+    const traverse = node => {
+      
+      if (node.left) traverse(node.left)
+
+      if (node.right) traverse(node.right)
+
+      result.push(node.value)
+      
+    }
+
+    traverse(this.root)
+
+    return result
+  }
 }
