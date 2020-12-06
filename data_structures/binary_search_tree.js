@@ -85,4 +85,41 @@ class BTS {
     return false;
   }
 
+  // insertion recap
+
+  insert(value) {
+    let newNode = new Node(value);
+
+    const searchTree = node => {
+      
+      if(value < node.value) {
+
+        if (!node.left) {
+          node.left = newNode;
+        } else {
+          searchTree(node.left);
+        }
+
+      } else {
+
+        if (!node.right) {
+          node.right = newNode;
+        } else {
+          searchTree(node.right);
+        }
+      }
+    }
+
+    searchTree(this.root);
+  }
+  
+
+  // DFS traverse 
+
+  // In-order
+
+  // Pre-order
+
+  // Post-order
+
 }
