@@ -207,8 +207,9 @@ class BTS {
         queue.push(currentNode.right)
       } 
 
-
     }
+
+    return result
   }
   
 }
