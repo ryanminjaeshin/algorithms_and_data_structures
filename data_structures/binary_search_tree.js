@@ -114,7 +114,7 @@ class BTS {
   }
   
 
-  // DFS traverse 
+  /* ------------ DFS traverse ------------ */
 
   // In-order
   // left root right
@@ -177,4 +177,11 @@ class BTS {
 
     return result
   }
+
+  /* ------------ BFS traverse ------------ */
+
+  bfs() {
+
+  }
+  
 }
