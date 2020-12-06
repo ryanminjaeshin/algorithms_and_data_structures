@@ -115,7 +115,7 @@ class BTS {
   
 
   /* ------------ DFS traverse ------------ */
-
+  // STACK LIFO
   // In-order
   // left root right
   dfsInOrder() {
