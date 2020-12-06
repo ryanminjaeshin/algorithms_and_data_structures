@@ -190,7 +190,8 @@ class BTS {
 
     // until queue is empty
     while(queue.length) {
-
+      // take one out from the queue
+      let currentNode = queue.shift();
     }
   }
   
