@@ -187,6 +187,11 @@ class BTS {
 
     // Add root to the queue
     queue.push(this.root);
+
+    // until queue is empty
+    while(queue.length) {
+
+    }
   }
   
 }
