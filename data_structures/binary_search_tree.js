@@ -190,8 +190,19 @@ class BTS {
 
     // until queue is empty
     while(queue.length) {
+
       // take one out from the queue
       let currentNode = queue.shift();
+
+      // Add current node to the result array
+      result.push(currentNode.value)
+
+      // If the current node has left node, add in to the queue
+      if (currentNode.left) {
+        queue.push(currentNode.left)
+      } 
+
+
     }
   }
   
