@@ -202,6 +202,11 @@ class BTS {
         queue.push(currentNode.left)
       } 
 
+      // If the current node has right node, add in to the queue
+      if (currentNode.right) {
+        queue.push(currentNode.right)
+      } 
+
 
     }
   }
