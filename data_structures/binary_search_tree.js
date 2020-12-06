@@ -179,9 +179,14 @@ class BTS {
   }
 
   /* ------------ BFS traverse ------------ */
+  // QUEUE
 
   bfs() {
+    let result = [];
+    let queue = [];
 
+    // Add root to the queue
+    queue.push(this.root);
   }
   
 }
