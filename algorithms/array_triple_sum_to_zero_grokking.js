@@ -17,7 +17,15 @@ Explanation: There are two unique triplets whose sum is equal to zero.
 */
 
 const search_triplets = function(arr) {
-  triplets = [];
+  let result = [];
+      triplets = [];
   // TODO: Write your code here
-  return triplets;
+  let p1 = 0;
+  let p2 = 1;
+
+  for (let i = 0; i < arr.length; i += 1) {
+
+  }
+
+  return result;
 };
