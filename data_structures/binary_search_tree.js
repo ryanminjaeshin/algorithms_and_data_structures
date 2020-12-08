@@ -6,14 +6,14 @@ class Node {
   }
 }
 
-class BTS {
+class BST {
   constructor(value) {
     this.root = new Node(value);
-    this.size = 1;
+    this.count = 1;
   }
 
   size() {
-    return this.size;
+    return this.count;
   }
 
   insert(value) {
@@ -83,36 +83,7 @@ class BTS {
     }
 
     return false;
-  }
-
-  // insertion recap
-
-  insert(value) {
-    let newNode = new Node(value);
-
-    const searchTree = node => {
-      
-      if(value < node.value) {
-
-        if (!node.left) {
-          node.left = newNode;
-        } else {
-          searchTree(node.left);
-        }
-
-      } else {
-
-        if (!node.right) {
-          node.right = newNode;
-        } else {
-          searchTree(node.right);
-        }
-      }
-    }
-
-    searchTree(this.root);
-  }
-  
+  } 
 
   /* ------------ DFS traverse ------------ */
   // STACK LIFO
@@ -213,3 +184,12 @@ class BTS {
   }
   
 }
+
+
+const tree = new BST(16);
+tree.insert(15)
+tree.insert(8)
+tree.insert(23)
+tree.insert(33)
+const bfs = tree.bfs();
+console.log(bfs)
