@@ -51,3 +51,55 @@ var threeSum = function(nums) {
 	}
 	return rtn;
 };
+
+////////////////////////////////////////
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function(nums) {
+    
+  var result = [];
+  
+  var len = nums.length;
+  
+  if (nums.length < 3) return result;
+  
+  nums = nums.sort((a, b) => a - b);
+  
+  for (var i = 0; i < len; i += 1) {
+      
+      if (nums[i] > 0) return result;
+      
+      if (i > 0 && nums[i] === nums[i-1]) continue;
+      
+      for (var left = i + 1, right = len - 1; left < right;) {
+          
+          if (nums[i] + nums[right] + nums[left] === 0) {
+              
+              result.push([nums[i], nums[right], nums[left]])
+              
+              left ++;
+              
+              right --;
+              
+              while (left < right && nums[left] === nums[left - 1]) {
+                  left ++;
+              }
+                              
+              while (left < right && nums[right] === nums[right + 1]) {
+                  right --;
+              }
+          } else if (nums[i] + nums[left] + nums[right] > 0) {
+              
+              right --;
+              
+          } else {
+              
+              left ++ ;
+          } 
+      }
+  }
+  return result;
+  
+};
