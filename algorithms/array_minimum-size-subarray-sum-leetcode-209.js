@@ -41,3 +41,26 @@ var minSubArrayLen = function(s, nums) {
 
         return min === Infinity ? 0 : min;
 };
+
+// Recap 12/9
+
+const smallest_subarray_with_given_sum = function(s, arr) {
+    // TODO: Write your code here
+    let minLen = Infinity;
+        sum = 0;
+        len = arr.length;
+        windowStart = 0;
+  
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+  
+      sum += arr[windowEnd];
+  
+      while (sum >= s) {
+        minLen = Math.min(minLen, windowEnd - windowStart + 1);
+        sum -= arr[windowStart];
+        windowStart += 1;
+      }
+    }
+  
+    return minLen === Infinity ? 0 : minLen
+  };
