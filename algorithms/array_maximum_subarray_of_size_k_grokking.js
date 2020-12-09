@@ -16,8 +16,19 @@ Explanation: Subarray with maximum sum is [3, 4].
 
 */
 
+/*
+
+I: positive integer, arr
+O: max sum of given size array
+C: None
+Edeg case: X
+Example: See above.
+
+*/
+
+
 const max_sub_array_of_size_k = function(k, arr) {
     // TODO: Write your code here
-    return -1;
+
   };
   
