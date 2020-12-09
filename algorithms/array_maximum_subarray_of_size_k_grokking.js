@@ -34,6 +34,17 @@ const max_sub_array_of_size_k = function(k, arr) {
         len = arr.length;
         windowStart = 0;
 
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+        sum += arr[windowEnd];
+
+        if (windoeEnd >= k) {
+            sum -= arr[windowStart];
+            windowStart += 1;
+        }
+
+        maxSum = Math.max(maxSum, sum)
+    }
+
     return maxSum;
   };
   
