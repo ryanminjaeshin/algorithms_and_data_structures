@@ -29,6 +29,11 @@ Example: See above.
 
 const max_sub_array_of_size_k = function(k, arr) {
     // TODO: Write your code here
+    let maxSum = 0;
+        sum = 0;
+        len = arr.length;
+        windowStart = 0;
 
+    return maxSum;
   };
   
