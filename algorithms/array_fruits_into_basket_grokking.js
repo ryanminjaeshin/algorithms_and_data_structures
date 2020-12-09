@@ -54,3 +54,41 @@ const fruits_into_baskets = function(fruits) {
 
     return max;
   };
+
+  // Recap 12/9
+
+  const fruits_into_baskets = function(fruits) {
+    // TODO: Write your code here
+    let map = new Map();
+        windowStart = 0;
+        len = fruits.length;
+        max = 0;
+  
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+  
+      let right = fruits[windowEnd]
+  
+      if (!(right in map)) {
+        map[right] = 0;
+      }
+  
+      map[right] += 1;
+  
+      while (Object.keys(map).length > 2) {
+        let left = fruits[windowStart];
+        map[left] -= 1;
+  
+        if(map[left] === 0) {
+          delete map[left]
+        }
+  
+        windowStart += 1;
+      }
+  
+      max = Math.max(max, windowEnd - windowStart + 1)
+  
+    }
+  
+    return max;
+  };
+  
