@@ -54,3 +54,36 @@ const lengthOfLongestSubstringKDistinct = function(s, k) {
 
         return maxLength;
 };
+
+// Recap 12/9
+
+const longest_substring_with_k_distinct = function(str, k) {
+    // TODO: Write your code here
+    let map = new Map();
+        len = str.length;
+        windowStart = 0;
+        max = 0;
+  
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+      let right = str[windowEnd]
+  
+      if (!(map[right] in map)) {
+        map[right] = 0;
+      }
+  
+      map[right] += 1;
+  
+      while (Object.keys(map).length > k) {
+        let left = str[windowStart];
+        map[left] -= 1;
+        if (map[left] === 0) {
+          delete map[left];
+        }
+        windowStart += 1;
+      }
+  
+      max = Math.max(max, windowEnd - windowStart + 1)
+    }   
+    return max   
+  };
+  
