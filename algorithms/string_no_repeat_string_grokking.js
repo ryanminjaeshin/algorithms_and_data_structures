@@ -78,3 +78,25 @@ const non_repeat_substring = function(str) {
   
     return max;
   };
+
+  // Recap 12/9
+
+  const non_repeat_substring = function(str) {
+    // TODO: Write your code here
+    let string = '';
+        len = str.length;
+        max = 0;
+  
+    for (let i = 0; i < len; i += 1) {
+      let index = string.indexOf(str[i]);
+      string += str[i]
+  
+      if (index > -1) {
+        string = string.slice(index + 1);
+      }
+  
+      max = Math.max(max, string.length)
+    } 
+    return max;
+  };
+  
