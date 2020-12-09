@@ -48,3 +48,33 @@ const non_repeat_substring = function(str) {
 
     return max;
   };
+
+  // Recap 12/9
+
+  const non_repeat_substring = function(str) {
+    // TODO: Write your code here
+    let max = 0;
+        windowStart = 0;
+        len = str.length;
+        map = new Map();
+  
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+      let right = str[windowEnd];
+  
+      if (!(right in map)) {
+        map[right] = 0
+      }
+  
+      map[right] += 1;
+  
+      while(Object.values(map).indexOf(2) > -1) {
+        let left = str[windowStart];
+        map[left] -= 1;
+        windowStart += 1;
+      }
+  
+      max = Math.max(max, windowEnd - windowStart + 1);
+    }
+  
+    return max;
+  };
