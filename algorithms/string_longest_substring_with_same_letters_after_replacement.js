@@ -20,3 +20,35 @@ Output: 3
 Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating substring "ccc".
 
 */
+
+const length_of_longest_substring = function(str, k) {
+    // TODO: Write your code here
+    let map = new Map();
+        len = str.length;
+        windowStart = 0;
+        max = 0;
+
+
+    for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
+        let right = str[windowEnd];
+
+        if (!(right in map)) {
+            map[right] = 0;
+        }
+
+        map[right] += 1;
+
+        while (Object.keys(map).length > 1 && ) {
+            let left = str[windowStart];
+            map[left] -= 1;
+            if(map[left] === 0) {
+                delete map[left];
+            }
+            windowStart += 1;
+        }
+        max = Math.max(max, windowEnd - windowStart + 1);
+    }
+
+    return max;
+  };
+  
