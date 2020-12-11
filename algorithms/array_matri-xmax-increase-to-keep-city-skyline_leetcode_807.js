@@ -29,3 +29,25 @@ gridNew = [ [8, 4, 8, 7],
             [3, 3, 3, 3] ]
 
 */
+
+
+var maxIncreaseKeepingSkyline = function(grid) {
+    let rowMax = new Array(grid.length)
+    let colMax = new Array(grid[0].length).fill(0)
+    let result = 0;
+    
+    for (let i = 0; i < grid.length; i ++) {
+        for (let j = 0; j < grid[i].length; j ++) {
+          rowMax[i] = Math.max(...grid[i])
+          colMax[j] = Math.max(colMax[j], grid[i][j])
+        }
+    }
+
+    for (let i = 0; i < grid.length; i ++) {
+        for (let j = 0; j < grid[i].length; j ++) {
+      result += Math.min(rowMax[i], colMax[j]) - grid[i][j]
+        }
+    }
+
+    return result;
+};
