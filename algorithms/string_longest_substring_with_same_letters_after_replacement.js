@@ -38,7 +38,7 @@ const length_of_longest_substring = function(str, k) {
 
         map[right] += 1;
 
-        while (Object.keys(map).length > 1 && ) {
+        while (Object.keys(map).length > 1 && Object.values(map).reduce((a, b) => a + b) - Object.values(map)[0] > k) {
             let left = str[windowStart];
             map[left] -= 1;
             if(map[left] === 0) {
@@ -52,3 +52,5 @@ const length_of_longest_substring = function(str, k) {
     return max;
   };
   
+  var ans = length_of_longest_substring('ABBB', 2);
+  console.log(ans)
