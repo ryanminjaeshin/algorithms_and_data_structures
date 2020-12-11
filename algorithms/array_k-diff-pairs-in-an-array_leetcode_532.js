@@ -39,7 +39,8 @@ Explanation: There is one 0-diff pair in the array, (1, 1).
  */
 
  // nums[i] - nums[i + 1] = k
-
+ // [0,1,1,2,-2,3,5], 2
+ // map = {-2 : 0, -1: 1, -1: 1, 0:2,}
 var findPairs = function(nums, k) {
     var map = new Map();
     var result = [];
@@ -50,8 +51,13 @@ var findPairs = function(nums, k) {
     }
 
     for (var i = 0; i < nums.length; i ++) {
-
+        if (nums[i] in map) {
+            result.push([map[nums[i]], nums[i]])
+        }
     }
-    
+
     return result;
 };
+
+var ans = findPairs([3,1,4,1,5], 2);
+console.log(ans)
