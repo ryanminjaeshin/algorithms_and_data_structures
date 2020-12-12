@@ -31,3 +31,4 @@ const remove_duplicates = function(arr) {
     return nextNonDuplicate;
   };
   
+  // recap 
