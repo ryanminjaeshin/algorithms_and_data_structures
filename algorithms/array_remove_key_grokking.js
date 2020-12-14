@@ -18,7 +18,10 @@ Explanation: The first two elements after removing every 'Key' will be [11, 1].
 function remove_element(arr, key) {
     var result = 0;
     for (var i = 0; i < arr.length; i ++) {
-
+        if (arr[i] !== key) {
+            arr[result] = arr[i];
+            result += 1;
+        }
     }
 
     return result
