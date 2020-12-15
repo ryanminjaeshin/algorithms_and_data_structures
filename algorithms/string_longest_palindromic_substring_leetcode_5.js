@@ -75,3 +75,6 @@ var longestPalindrome = function(s) {
 
 longestPalindrome('abbc')
 //
+
+
+// recap
