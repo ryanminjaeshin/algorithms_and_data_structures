@@ -32,4 +32,14 @@ The two tuples are:
  * @return {number}
  */
 var fourSumCount = function(A, B, C, D) {
+    let map = new Map();
+        len = A.length;
+
+    for (let i = 0; i < len; i ++) {
+        for (let j = 0; j < len; j ++) {
+            let subSum = A[i] + B[j];
+            
+            map[subSum] = true;
+        }
+    }
 };
