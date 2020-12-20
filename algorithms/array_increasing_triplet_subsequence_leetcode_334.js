@@ -29,12 +29,11 @@ Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 
  * @return {boolean}
  */
 var increasingTriplet = function(nums) {
-    let len = nums.length;
-        windowEnd = 2;
-    
-
-    for (let windowStart = 0; windowStart < len; windowStart += 1 ) {
-        
+    let min1 = nums[0], min2 = Number.MAX_VALUE;
+    for (let num of nums) {
+        if (num > min2) return true;
+        if (num > min1) min2 = num
+        else min1 = num;
     }
     return false;
 };
