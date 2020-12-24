@@ -48,3 +48,5 @@ var make_squares = (arr) => {
     
     return square
 }
+
+// Recap
