@@ -50,3 +50,4 @@ var make_squares = (arr) => {
 }
 
 // Recap
+practice
