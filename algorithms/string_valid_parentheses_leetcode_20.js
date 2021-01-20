@@ -56,3 +56,5 @@ var isValid = function(s) {
 };
 
 isValid('()')
+
+// Recap
