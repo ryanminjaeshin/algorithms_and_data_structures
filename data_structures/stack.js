@@ -32,3 +32,5 @@ console.log(stack.pop());
 console.log(stack.pop());
 
 console.log(stack);
+
+// Recap
