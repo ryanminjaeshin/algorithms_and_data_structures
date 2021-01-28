@@ -56,3 +56,11 @@ const pair_with_targetsum = function(arr, target_sum) {
     return [-1, -1];
   }
   
+
+const pair_with_targetsum = (arr, target) => {
+  let left = 0;
+  let right = arr.length - 1;
+  
+
+  return [-1, -1]
+}
