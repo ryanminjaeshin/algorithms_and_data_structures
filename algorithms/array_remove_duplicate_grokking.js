@@ -32,3 +32,20 @@ const remove_duplicates = function(arr) {
   };
   
   // recap 
+
+  const remove_duplicates = (arr) => {
+      let nextDupPointer = 1;
+
+      let i = 1;
+
+      while (i < arr.length) {
+          if (arr[nextDupPointer - 1] !== arr[i]) {
+              arr[nextDupPointer] = arr[i];
+              nextDupPointer += 1;
+          }
+
+        i += 1;
+      }
+
+      return nextDupPointer;
+  }

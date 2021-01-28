@@ -60,7 +60,13 @@ const pair_with_targetsum = function(arr, target_sum) {
 const pair_with_targetsum = (arr, target) => {
   let left = 0;
   let right = arr.length - 1;
-  
+
+  while (left < right) {
+    let targetSum = arr[left] + arr[right];
+    if (targetSum === target) return [left, right];
+    if (targetSum < target) left ++;
+    if (targetSum > target) right --;
+  }
 
   return [-1, -1]
 }
