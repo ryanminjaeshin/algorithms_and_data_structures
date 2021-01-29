@@ -38,3 +38,20 @@ var hasCycle = function(head) {
 };
 
 // Recap
+
+const hasCycle = (head) => {
+
+    if (!head) return false;
+
+    let slow = this.head;
+    let fast = this.head.next;
+
+    while (fast !== null && fast.next !== null) {
+        if (slow === fast) return true;
+
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    return false;
+}
