@@ -11,10 +11,19 @@ class Trie {
       if (node[char] == null) node[char] = {};
       node = node[char];
     }
-
     node.isWord = true;
   }
+
+  traverse(word) {
+    let node = this.root;
+    for (let c of word) {
+      node = node[c];
+      if (node == null) return null;
+    }
+    return node;
+  }
 }
+
 
 const trie = new Trie();
 trie.insert('ab');
