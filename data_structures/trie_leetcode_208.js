@@ -22,6 +22,11 @@ class Trie {
     }
     return node;
   }
+
+  search(word) {
+    const node = this.traverse(word);
+    return node !== null && node.isWord === true;
+  }
 }
 
 
