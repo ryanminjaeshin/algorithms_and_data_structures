@@ -35,8 +35,8 @@ var addTwoNumbers = function(l1, l2) {
     var p1 = l1;
     var p2 = l2;
     var carry = 0;
-    var p3 = new ListNode(0);
-    var result = p3;
+    var solution = new ListNode(0);
+    var result = solution;
     
     while (p1 !== null || p2 !== null) {
         var x = (p1 !== null) ? p1.val : 0;
@@ -56,5 +56,5 @@ var addTwoNumbers = function(l1, l2) {
     
     if (carry > 0) result.next = new ListNode(1);
     
-    return p3.next;
+    return solution.next;
 };
