@@ -95,6 +95,8 @@ class BST {
 
     const traverse = node => {
       
+      if (!node) return;
+
       if (node.left) traverse(node.left)
 
       result.push(node.value)
@@ -114,7 +116,9 @@ class BST {
     let result = [];
 
     const traverse = node => {
-
+      
+      if (!node) return;
+      
       result.push(node.value)
       
       if (node.left) traverse(node.left)
@@ -135,6 +139,8 @@ class BST {
     let result = [];
 
     const traverse = node => {
+            
+      if (!node) return;
       
       if (node.left) traverse(node.left)
 
