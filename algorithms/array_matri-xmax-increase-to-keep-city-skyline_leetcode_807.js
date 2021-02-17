@@ -2,7 +2,7 @@
 
 /*
 
-In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. 
+In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well.
 
 At the end, the "skyline" when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid. A city's skyline is the outer contour of the rectangles formed by all the buildings when viewed from a distance. See the following example.
 
@@ -11,9 +11,9 @@ What is the maximum total sum that the height of the buildings can be increased?
 Example:
 Input: grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
 Output: 35
-Explanation: 
+Explanation:
 The grid is:
-[ [3, 0, 8, 4], 
+[ [3, 0, 8, 4],
   [2, 4, 5, 7],
   [9, 2, 6, 3],
   [0, 3, 1, 0] ]
@@ -35,7 +35,7 @@ var maxIncreaseKeepingSkyline = function(grid) {
     let rowMax = new Array(grid.length)
     let colMax = new Array(grid[0].length).fill(0)
     let result = 0;
-    
+
     for (let i = 0; i < grid.length; i ++) {
         for (let j = 0; j < grid[i].length; j ++) {
           rowMax[i] = Math.max(...grid[i])
@@ -51,3 +51,5 @@ var maxIncreaseKeepingSkyline = function(grid) {
 
     return result;
 };
+
+// Recap
