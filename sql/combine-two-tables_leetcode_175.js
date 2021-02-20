@@ -29,3 +29,7 @@ Write a SQL query for a report that provides the following information for each 
 
 */
 
+SELECT FirstName, LastName, City, State
+FROM Person
+Left Join Address
+ON Person.PersonId = Address.PersonId
