@@ -23,7 +23,20 @@ function remove_element(arr, key) {
             arr[nextEle] == arr[i];
             nextEle ++;
         }
-    } 
+    }
 
     return nextEle;
+}
+
+const remove_element = (arr, key) => {
+    let next = 0;
+
+    for (let i  = 0; i < arr.length; i += 1) {
+        if (arr[i] !== key) {
+            arr[next] = arr[i];
+            next += 1;
+        }
+    }
+
+    return next;
 }
