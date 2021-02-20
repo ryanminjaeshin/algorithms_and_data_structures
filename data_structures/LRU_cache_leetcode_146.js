@@ -35,3 +35,10 @@ lRUCache.get(3);    // return 3
 lRUCache.get(4);    // return 4
 
 */
+
+class LRUCache {
+  constructor (capacity) {
+    this.cache = new Map();
+    this.capacity = capacity;
+  }
+}
