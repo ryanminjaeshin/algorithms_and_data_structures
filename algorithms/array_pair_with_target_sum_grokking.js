@@ -52,10 +52,10 @@ const pair_with_targetsum = function(arr, target_sum) {
 
         map[target_sum - arr[i]] = i;
     }
-    
+
     return [-1, -1];
   }
-  
+
 
 const pair_with_targetsum = (arr, target) => {
   let left = 0;
@@ -69,4 +69,11 @@ const pair_with_targetsum = (arr, target) => {
   }
 
   return [-1, -1]
+}
+
+const pair_with_targetsum = function(arr, target_sum) {
+  // TODO: Write your code here
+  let left = 0;
+  let right = arr.length - 1;
+  return [left, right];
 }
