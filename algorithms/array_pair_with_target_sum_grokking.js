@@ -77,7 +77,11 @@ const pair_with_targetsum = function(arr, target_sum) {
   let right = arr.length - 1;
 
   while (left < right) {
+    let sum = arr[left] + arr[right];
 
+    if (sum == target_sum) return [left, right];
+    if (sum < target_sum) left += 1;
+    if (sum > target_sum) right -= 1;
   }
 
   return [-1, -1];
