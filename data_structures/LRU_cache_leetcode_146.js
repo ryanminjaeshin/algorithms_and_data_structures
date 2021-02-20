@@ -41,4 +41,16 @@ class LRUCache {
     this.cache = new Map();
     this.capacity = capacity;
   }
+
+  get(key) {
+    // Return the value of the key if the key exists, otherwise return -1.
+    if (!this.cache.has(key)) return -1;
+
+    // once get method is executed, the key-value pair should go the last in the map
+    const v = this.cache.get(key);
+    this.cache.delete(key);
+    this.cache.set(key, v);
+    return this.cache.get(key);
+  }
+
 }
