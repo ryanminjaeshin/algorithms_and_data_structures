@@ -33,3 +33,10 @@ SELECT FirstName, LastName, City, State
 FROM Person
 Left Join Address
 ON Person.PersonId = Address.PersonId
+
+// OR
+
+SELECT FirstName, LastName, City, State
+FROM Person
+Left Join Address
+USING (PersonId)
