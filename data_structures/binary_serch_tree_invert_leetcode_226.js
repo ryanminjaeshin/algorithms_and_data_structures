@@ -33,4 +33,13 @@ Output:
  */
 var invertTree = function(root) {
 
+  let queue = [root];
+  while (queue.length) {
+    let n = queue.shift();
+    if (n) {
+      [n.left, n.right] = [n.right, n.left];
+      queue.push([n.left, n.right])
+    }
+  }
+  return root;
 };
