@@ -34,6 +34,7 @@ Output: []
 
 
 var levelOrderBottom = function(root) {
+  if(!root) return [];
   let result = [];
   let queue = [root];
 
