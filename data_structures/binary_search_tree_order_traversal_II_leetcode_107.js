@@ -34,5 +34,16 @@ Output: []
 
 
 var levelOrderBottom = function(root) {
+  let result = [];
+  let queue = [root];
 
+  while (queue.length) {
+    let currentLevel = [];
+    let levelSize = queue.length;
+    for (let i = 0; i < levelSize; i += 1) {
+
+    }
+  }
+
+  return result;
 };
