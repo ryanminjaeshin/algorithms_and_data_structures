@@ -33,5 +33,12 @@ Output: []
 */
 
 var levelOrder = function(root) {
+  let result  = [];
+  let queue = [];
 
+  while(queue.length > 0) {
+
+  }
+
+  return result;
 };
