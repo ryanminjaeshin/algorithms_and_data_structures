@@ -41,9 +41,12 @@ var levelOrderBottom = function(root) {
     let currentLevel = [];
     let levelSize = queue.length;
     for (let i = 0; i < levelSize; i += 1) {
-
+      let currentNode = queue.shift();
+      currentLevel.push(currentNode.val);
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
     }
+    result.unshift(currentLevel);
   }
-
   return result;
 };
