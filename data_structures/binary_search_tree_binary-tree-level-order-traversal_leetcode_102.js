@@ -34,6 +34,8 @@ Output: []
 
 var levelOrder = function(root) {
 
+  if (!root) return [];
+
   let result  = [];
 
   let queue = [];
@@ -57,6 +59,8 @@ var levelOrder = function(root) {
       if (currentNode.right) queue.push(currentNode.right)
 
     }
+
+    result.push(currentLevel);
 
   }
 
