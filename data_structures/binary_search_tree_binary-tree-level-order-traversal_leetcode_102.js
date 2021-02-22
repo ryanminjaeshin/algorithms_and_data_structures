@@ -33,10 +33,30 @@ Output: []
 */
 
 var levelOrder = function(root) {
+
   let result  = [];
+
   let queue = [];
 
-  while(queue.length > 0) {
+  queue.push(root);
+
+  while (queue.length > 0) {
+
+    const levelSize = queue.length;
+
+    let currentLevel = [];
+
+    for (let i = 0; i < levelSize; i += 1) {
+
+      currentNode = queue.shift();
+
+      currentLevel.push(currentNode.val);
+
+      if (currentNode.left) queue.push(currentNode.left);
+
+      if (currentNode.right) queue.push(currentNode.right)
+
+    }
 
   }
 
