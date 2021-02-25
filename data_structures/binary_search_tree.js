@@ -83,7 +83,7 @@ class BST {
     }
 
     return false;
-  } 
+  }
 
   /* ------------ DFS traverse ------------ */
   // STACK LIFO
@@ -94,7 +94,7 @@ class BST {
     let result = [];
 
     const traverse = node => {
-      
+
       if (!node) return;
 
       if (node.left) traverse(node.left)
@@ -116,15 +116,15 @@ class BST {
     let result = [];
 
     const traverse = node => {
-      
+
       if (!node) return;
-      
+
       result.push(node.value)
-      
+
       if (node.left) traverse(node.left)
 
       if (node.right) traverse(node.right)
-      
+
     }
 
     traverse(this.root)
@@ -139,15 +139,15 @@ class BST {
     let result = [];
 
     const traverse = node => {
-            
+
       if (!node) return;
-      
+
       if (node.left) traverse(node.left)
 
       if (node.right) traverse(node.right)
 
       result.push(node.value)
-      
+
     }
 
     traverse(this.root)
@@ -177,18 +177,18 @@ class BST {
       // If the current node has left node, add in to the queue
       if (currentNode.left) {
         queue.push(currentNode.left)
-      } 
+      }
 
       // If the current node has right node, add in to the queue
       if (currentNode.right) {
         queue.push(currentNode.right)
-      } 
+      }
 
     }
 
     return result
   }
-  
+
 }
 
 
@@ -203,4 +203,5 @@ console.log(bfs)
 
 // Recap 12/16
 // Recap 1/1
-// Recap 
+// Recap
+// Recap
