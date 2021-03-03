@@ -45,3 +45,18 @@ var twoSum = function(nums, target) {
       map[target - num] = i;
   }
 };
+
+var twoSum = function(nums, target) {
+  let map = new Map();
+  for (let i = 0; i < nums.length; i += 1) {
+      let num = nums[i];
+      if (map[num] >= 0) {
+          return [i, map[num]]
+      }
+      
+      map[target - num] = i;
+  }
+  
+};
+
+// Recap
