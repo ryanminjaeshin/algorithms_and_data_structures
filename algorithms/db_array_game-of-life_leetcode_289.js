@@ -50,4 +50,5 @@ The next state is created by applying the above rules simultaneously to every ce
      }
    }
 
+   return board;
 };
