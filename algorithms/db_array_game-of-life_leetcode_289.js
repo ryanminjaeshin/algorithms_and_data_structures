@@ -4,7 +4,7 @@
 
 According to Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
 
-The board is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):
+The b is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):
 
 Any live cell with fewer than two live neighbors dies as if caused by under-population.
 Any live cell with two or three live neighbors lives on to the next generation.
@@ -24,45 +24,44 @@ The next state is created by applying the above rules simultaneously to every ce
 //  C
 //  E
 
- var gameOfLife = function(board) {
-   // mark live -> die as -1
-   // mark die -> live as 2
+var gameOfLife = function(b) {
+  // live -> die -1
+  // die -> live 2
 
-   let row = board.length;
-   let col = board[0].length;
+  let row = b.length;
+  let col = b[0].length;
 
-   // Mark the board
-   for (let i = 0; i < row; i += 1) {
-     for (let j = 0; j < col; j += 1) {
-       let cell = board[i][j];
-       let neighbors = getNeighbors(i, j, board);
-       if (cell == 1 && (neighbors < 2 || neighbors > 3)) board[i][j] = -1;
-       if (cell == 0 && neighbors == 3) board[i][j] = 2;
-     }
-   }
+  for (let i = 0; i < row; i ++) {
+      for (let j = 0; j < col; j ++) {
+          let cell = b[i][j];
+          let neighbors = getNeighbor(i, j, b)
+          if (cell == 1 && (neighbors < 2 || neighbors > 3)) b[i][j] = -1;
+          if (cell == 0 && neighbors == 3) b[i][j] = 2;
+      }
+  }
 
-   // convert the marked board
-   for (let i = 0; i < row; i += 1) {
-     for (let j = 0; j < col; j += 1) {
-       let cell = board[i][j];
-       if (cell == -1) board[i][j] = 0;
-       if (cell == 2) board[i][j] = 1;
-     }
-   }
-
-   return board;
+  for (let i = 0; i < row; i ++) {
+      for(let j = 0; j < col; j ++) {
+          let cell = b[i][j];
+          if (cell == -1) b[i][j] = 0;
+          if (cell == 2) b[i][j] = 1;
+      }
+  }
+  return b;
 };
 
-const getNeighbors = (row, col, board) => {
-  let radius = [-1, 0, 1], count = 0;
-    for (let i = 0; i < radius.length; i += 1) {
-      for (let j = 0; j < radius.length; j += 1) {
-        let self = radius[i] == 0 && radius[j] == 0
-        if (!self && board[row + radius[i]]) {
-          let neighbor = board[row + radius[i]][col + radius[j]];
-          if (Math.abs[neighbor] == 1) count += 1;
-        }
+const getNeighbor = (r, c, b) => {
+  let a = [-1, 0 ,1], count = 0;
+
+  for (let i = 0; i < a.length; i ++) {
+      for (let j = 0; j < a.length; j ++) {
+          let self = (a[i] == 0 && a[j] == 0);
+          if (!self && b[r + a[i]]) {
+              let neighbor = b[r + a[i]][c + a[j]];
+              if (Math.abs(neighbor) == 1) count ++;
+          }
       }
-    }
-    return count;
+  }
+
+  return count;
 }
