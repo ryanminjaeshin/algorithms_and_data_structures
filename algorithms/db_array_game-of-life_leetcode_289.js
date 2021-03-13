@@ -40,4 +40,14 @@ The next state is created by applying the above rules simultaneously to every ce
        if (cell == 0 && neighbors == 3) board[i][j] = 2;
      }
    }
+
+   // convert the marked board
+   for (let i = 0; i < row; i += 1) {
+     for (let j = 0; j < col; j += 1) {
+       let cell = board[i][j];
+       if (cell == -1) board[i][j] = 0;
+       if (cell == 2) board[i][j] = 1;
+     }
+   }
+
 };
