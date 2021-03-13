@@ -52,3 +52,17 @@ The next state is created by applying the above rules simultaneously to every ce
 
    return board;
 };
+
+const getNeighbors = (row, col, board) => {
+  let radius = [-1, 0, 1], count = 0;
+    for (let i = 0; i < radius.length; i += 1) {
+      for (let j = 0; j < radius.length; j += 1) {
+        let self = radius[i] == 0 && radius[j] == 0
+        if (!self && board[row + radius[i]]) {
+          let neighbor = board[row + radius[i]][col + radius[j]];
+          if (Math.abs[neighbor] == 1) count += 1;
+        }
+      }
+    }
+    return count;
+}
