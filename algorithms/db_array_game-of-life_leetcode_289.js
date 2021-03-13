@@ -65,3 +65,6 @@ const getNeighbor = (r, c, b) => {
 
   return count;
 }
+
+// Time = O (m * n);
+// Space = O(1);
