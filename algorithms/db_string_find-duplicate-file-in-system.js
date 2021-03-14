@@ -45,5 +45,16 @@ How to make sure the duplicated files you find are not false positive?
  * @return {string[][]}
  */
  var findDuplicate = function(paths) {
-
+   let map = new Map();
+   for (let i = 0; i < paths.length; i ++) {
+     let path = paths[i].split(' ');
+     for (let j = 1; j < path.length; j ++) {
+       // file name, file content
+       let temp = path[j].split('(');
+       if (!map[temp[1]]) map[temp[1]] = [];
+       // path[0] = path, temp[0] = file name
+       map[temp[1]].push(`${path[0]}/${temp[0]}`)
+     }
+   }
+   return Object.values(map).filter(x => x.length > 1)
 };
