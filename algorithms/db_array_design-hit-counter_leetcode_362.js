@@ -38,16 +38,19 @@ counter.getHits(301);
  * Initialize your data structure here.
  */
 
-class hitCounter {
+ class HitCounter {
   constructor() {
     this.queue = [];
   }
 
   hit(timestamp) {
-
+    this.queue.push(timestamp);
   }
 
   getHits(timestamp){
-
+    while(this.queue.length && timestamp - this.queue[0] >= 300) {
+      this.queue.shift()
+    }
+    return this.queue.length;
   }
 }
