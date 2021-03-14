@@ -33,3 +33,21 @@ counter.getHits(300);
 counter.getHits(301);
 
 */
+
+/**
+ * Initialize your data structure here.
+ */
+
+class hitCounter {
+  constructor() {
+    this.queue = [];
+  }
+
+  hit(timestamp) {
+
+  }
+
+  getHits(timestamp){
+
+  }
+}
