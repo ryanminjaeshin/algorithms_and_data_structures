@@ -26,3 +26,5 @@ var mergeSort = function(arr) {
   
       return merge(mergeSort(left), mergeSort(right))
   };
+
+  // t -> O(n logn)
