@@ -28,3 +28,4 @@ var mergeSort = function(arr) {
   };
 
   // t -> O(n logn)
+  // recap

@@ -11,3 +11,4 @@ const bubbleSort = (arr) => {
 }
 
 // t => O(n * n)
+//recap
