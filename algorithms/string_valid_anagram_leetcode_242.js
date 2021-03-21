@@ -36,3 +36,22 @@ var isAnagram = function(s, t) {
 };
 
 // Recap
+
+var isAnagram = function(s, t) {
+  if (s.length !== t.length) return false;
+
+  let map = new Map();
+
+  for (let i = 0; i < s.length; i ++) {
+      !map[s[i]] ? map[s[i]] = 1 : map[s[i]] ++
+  }
+
+  for (let i = 0; i < t.length; i ++) {
+      if(map[t[i]]) {
+          map[t[i]] --;
+      } else return false;
+  }
+  return true
+};
+
+// Recap
