@@ -58,48 +58,81 @@ var threeSum = function(nums) {
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-    
+
   var result = [];
-  
+
   var len = nums.length;
-  
+
   if (nums.length < 3) return result;
-  
+
   nums = nums.sort((a, b) => a - b);
-  
+
   for (var i = 0; i < len; i += 1) {
-      
+
       if (nums[i] > 0) return result;
-      
+
       if (i > 0 && nums[i] === nums[i-1]) continue;
-      
+
       for (var left = i + 1, right = len - 1; left < right;) {
-          
+
           if (nums[i] + nums[right] + nums[left] === 0) {
-              
+
               result.push([nums[i], nums[right], nums[left]])
-              
+
               left ++;
-              
+
               right --;
-              
+
               while (left < right && nums[left] === nums[left - 1]) {
                   left ++;
               }
-                              
+
               while (left < right && nums[right] === nums[right + 1]) {
                   right --;
               }
           } else if (nums[i] + nums[left] + nums[right] > 0) {
-              
+
               right --;
-              
+
           } else {
-              
+
               left ++ ;
-          } 
+          }
       }
   }
   return result;
-  
+
 };
+
+//
+
+var threeSum = function(nums) {
+	nums.sort((a, b) => a - b);
+	let triplets = [];
+	for (let i = 0; i < nums.length; i ++) {
+			if(i > 0 && nums[i] === nums[i - 1]) continue;
+			findPair(nums, -nums[i], i + 1, triplets);
+	}
+
+	return triplets;
+};
+
+const findPair = (arr, target, left, triplets) => {
+	let right = arr.length - 1;
+	while (left < right) {
+			let sum = arr[left] + arr[right];
+			if (sum === target) {
+					triplets.push([-target, arr[left], arr[right]])
+					left += 1;
+					right -= 1;
+					while (left < right && arr[left] === arr[left - 1]) left += 1;
+					while (left < right && arr[right] === arr[right + 1]) right -= 1;
+			} else if (sum < target) {
+					left += 1;
+			} else {
+					right -= 1;
+			}
+	}
+}
+
+// recap
