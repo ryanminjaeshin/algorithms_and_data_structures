@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/maximum-subarray/
 
 /**
- 
+
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
@@ -48,14 +48,27 @@ var maxSubArray = function(nums) {
 var maxSubArray = function(nums) {
     var len = nums.length;
     var dp = new Array(len);
-    
+
     dp[0] = nums[0];
-    
+
     for (var i = 1; i < len; i ++) {
         dp[i] = Math.max(nums[i], nums[i] + dp[i - 1])
     }
-    
+
   return Math.max(...dp)
 };
 
 // Recap
+
+var maxSubArray = function(nums) {
+    let len = nums.length,
+        dp = new Array(len);
+
+    dp[0] = nums[0];
+
+    for (let i = 1; i < len; i ++) {
+        // dp[i] = dp[i - 1] > 0 ? dp[i - 1] + nums[i] : nums[i];
+        dp[i] = Math.max(dp[i - 1] + nums[i], nums[i])
+    }
+    return Math.max(...dp)
+};
