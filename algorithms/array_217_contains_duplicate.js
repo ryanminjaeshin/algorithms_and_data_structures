@@ -51,7 +51,7 @@ var containsDuplicate = function(nums) {
         return true
       } else {
         storage[anum] = true;
-  
+
       }
     }
     return false;
@@ -82,3 +82,4 @@ var containsDuplicate = (nums) => {
 }
 
 // Recap
+// recap
