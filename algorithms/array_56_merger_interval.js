@@ -1,6 +1,6 @@
 function merge(intervals) {
   if (!intervals.length) return intervals
-  intervals.sort((a, b) => a.start !== b.start ? a.start - b.start : a.end - b.end)
+  intervals.sort((a, b) => a.start -b.start)
   var prev = intervals[0]
   var res = [prev]
   for (var curr of intervals) {
