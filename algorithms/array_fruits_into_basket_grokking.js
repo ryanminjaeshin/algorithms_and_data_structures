@@ -16,14 +16,14 @@ Example 2:
 
 Input: Fruit=['A', 'B', 'C', 'B', 'B', 'C']
 Output: 5
-Explanation: We can put 3 'B' in one basket and two 'C' in the other basket. 
+Explanation: We can put 3 'B' in one basket and two 'C' in the other basket.
 This can be done if we start with the second letter: ['B', 'C', 'B', 'B', 'C']
 
 */
 
 const fruits_into_baskets = function(fruits) {
     // TODO: Write your code here
-    
+
     let windowStart = 0;
         len = fruits.length;
         map = new Map();
@@ -63,34 +63,35 @@ const fruits_into_baskets = function(fruits) {
         windowStart = 0;
         len = fruits.length;
         max = 0;
-  
+
     for (let windowEnd = 0; windowEnd < len; windowEnd += 1) {
-  
+
       let right = fruits[windowEnd]
-  
+
       if (!(right in map)) {
         map[right] = 0;
       }
-  
+
       map[right] += 1;
-  
+
       while (Object.keys(map).length > 2) {
         let left = fruits[windowStart];
         map[left] -= 1;
-  
+
         if(map[left] === 0) {
           delete map[left]
         }
-  
+
         windowStart += 1;
       }
-  
+
       max = Math.max(max, windowEnd - windowStart + 1)
-  
+
     }
-  
+
     return max;
   };
-  
+
 
   // Recap
+  // recap
