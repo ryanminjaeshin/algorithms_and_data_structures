@@ -40,6 +40,15 @@ var reverseList = function(head) {
   return prev;
 };
 
+// recap
+var reverseList = function(head) {
+  let [prev, current] = [null, head];
+  while(current) {
+    [current.next, prev, current] = [prev, current, current.next]
+  } 
+  return prev;
+}
+
 // O(n) time 
 // O(1) space
 
