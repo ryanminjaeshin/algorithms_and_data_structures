@@ -12,7 +12,7 @@ var reverseList = function(head) {
   let prev = null;
   let curr = head;
   let next = null;
-  
+
   while(curr !== null) {
       next = curr.next;
       curr.next = prev;
@@ -28,7 +28,7 @@ var reverseList = function(head) {
   var prev = null;
   var curr = head;
   var next = null;
-  
+
   while(curr) {
       // Stash the next;
       next = curr.next;
@@ -36,7 +36,7 @@ var reverseList = function(head) {
       prev = curr;
       curr = next;
   }
-  
+
   return prev;
 };
 
@@ -45,12 +45,13 @@ var reverseList = function(head) {
   let [prev, current] = [null, head];
   while(current) {
     [current.next, prev, current] = [prev, current, current.next]
-  } 
+  }
   return prev;
 }
 
-// O(n) time 
+// O(n) time
 // O(1) space
 
+// Recap
 // Recap
 // Recap
