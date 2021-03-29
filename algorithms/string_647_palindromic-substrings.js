@@ -41,3 +41,24 @@ Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
   return count;
 };
 
+//recap
+var countSubstrings = function(s) {
+    let len = s.length,
+        dp = new Array(len).fill().map(() => new Array(len).fill(false));
+    
+    for (let i = 0; i < len; i ++) {
+        dp[i][i] = true;
+    }
+    
+    for (let i = 0; i < len; i ++) {
+        if (s[i] === s[i+1]) dp[i][i+1] = true;
+    }
+    
+    for(let i = len - 1; i >= 0; i --) {
+        for (let j = i + 2; j < len; j ++) {
+            dp[i][j] = dp[i + 1][j - 1] && s[i] === s[j];
+        }
+    }
+    let temp = dp.map(x => x.filter(Boolean).length);
+    return temp.reduce((a, b) => a + b);
+};
