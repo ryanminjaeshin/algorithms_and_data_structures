@@ -7,13 +7,13 @@ class TreeNode {
 }
 
 
-function hasPath(root, sum) {
+const hasPathSum = (root, targetSum) => {
     if(!root) return false;
-    if(root.val === sum && !root.left & !root.right) return true;
-    return hasPath(root.left, sum - root.val) || hasPath(root.right, sum - root.val);
+    if(root.val === targetSum && !root.left & !root.right) return true;
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
 }
 
-var hasPathSum = function(root, targetSum) {
+const hasPathSum = (root, targetSum) => {
   if (!root) return false;
   let rootStack = [root];
   let sumStack = [targetSum - root.val];
@@ -36,5 +36,4 @@ var hasPathSum = function(root, targetSum) {
       }
   }
   return false;
-  
 };
