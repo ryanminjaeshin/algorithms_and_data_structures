@@ -8,8 +8,8 @@ class TreeNode {
 
 
 function hasPath(root, sum) {
-    if(!root) false;
-    if(root.val === sum && !root.left & !root.right) true;
+    if(!root) return false;
+    if(root.val === sum && !root.left & !root.right) return true;
     return hasPath(root.left, sum - root.val) || hasPath(root.right, sum - root.val);
 }
 
