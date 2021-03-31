@@ -25,7 +25,6 @@ var pacificAtlantic = function(matrix) {
       }
   }
   return res;
-
 };
 
 const dfs = (matrix, r, c, prevVal, ocean) => {
