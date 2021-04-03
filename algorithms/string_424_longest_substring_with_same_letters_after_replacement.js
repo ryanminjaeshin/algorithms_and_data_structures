@@ -54,3 +54,28 @@ const length_of_longest_substring = function(str, k) {
   
   var ans = length_of_longest_substring('ABBB', 2);
   console.log(ans)
+
+  var characterReplacement = function(s, k) {
+    let map = new Map(),
+        start = 0,
+        maxLen = 0,
+        maxRepeat = 0;
+    for (let end = 0; end < s.length; end ++) {
+        let right = s[end];
+        if(!map.get(right)) map.set(right, 0);
+        map.set(right, map.get(right) + 1);
+        
+        maxRepeat = Math.max(maxRepeat, map.get(right))
+        
+        while(end - start + 1 - maxRepeat > k) {
+            let left = s[start];
+            map.set(left, map.get(left) - 1);
+            start ++
+        }
+        
+        maxLen = Math.max(maxLen, end - start + 1);
+    }
+    return maxLen;
+};
+
+// recap
