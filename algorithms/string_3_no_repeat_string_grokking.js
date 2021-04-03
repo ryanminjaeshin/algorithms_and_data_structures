@@ -101,3 +101,24 @@ const non_repeat_substring = function(str) {
   };
   
   // recap
+
+  var lengthOfLongestSubstring = function(s) {
+    let map = {},
+        left = 0,
+        max = 0;
+    for (let right = 0; right < s.length; right ++) {
+        let rightChar = s[right];
+        if(!map[rightChar]) map[rightChar] = 0;
+        map[rightChar] ++;
+        
+        while (map[rightChar] > 1) {
+            let leftChar = s[left];
+            map[leftChar] --;
+            left ++;
+        }
+        max = Math.max(max, right - left + 1);
+    }
+    return max;
+};
+
+// recap
