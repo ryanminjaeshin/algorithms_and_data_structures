@@ -4,7 +4,7 @@
 
 Given a string s, return the longest palindromic substring in s.
 
- 
+
 
 Example 1:
 
@@ -73,10 +73,6 @@ var longestPalindrome = function(s) {
     return lps
 };
 
-longestPalindrome('abbc')
-//
-
-
 // recap
 
 var longestPalindrome = function(s) {
@@ -115,4 +111,5 @@ var longestPalindrome = function(s) {
 };
 
 // Recap
+// recap
 // recap
