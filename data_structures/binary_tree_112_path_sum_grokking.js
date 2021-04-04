@@ -18,14 +18,14 @@ const hasPathSum = (root, targetSum) => {
   let rootStack = [root];
   let sumStack = [targetSum - root.val];
   while(rootStack.length > 0) {
-      
+
       let currentNode = rootStack.pop();
       let currentSum = sumStack.pop();
-      
+
       if (!currentNode.left && !currentNode.right && currentSum === 0) {
           return true;
       }
-      
+
       if (currentNode.left) {
           rootStack.push(currentNode.left);
           sumStack.push(currentSum - currentNode.left.val)
@@ -37,3 +37,5 @@ const hasPathSum = (root, targetSum) => {
   }
   return false;
 };
+
+// recap
