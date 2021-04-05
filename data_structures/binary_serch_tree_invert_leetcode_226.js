@@ -45,3 +45,30 @@ var invertTree = function(root) {
 };
 
 // recap
+
+
+// bfs
+var invertTree = function(root) {
+  let queue = [root];
+  while(queue.length) {
+    let currentNode = queue.shift();
+    if (currentNode) {
+        [currentNode.left, currentNode.right] = [currentNode.right, currentNode.left]
+        queue.push(currentNode.left, currentNode.right) 
+    }
+  }
+  return root
+};
+// dfs
+
+var invertTree = function(root) {
+  if (!root) return root;
+
+  let left = invertTree(root.left);
+  let right = invertTree(root.right);
+
+  root.left = right;
+  root.right = left;
+  
+  return root;
+};
