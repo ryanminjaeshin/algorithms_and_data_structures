@@ -47,3 +47,5 @@ const reversed = (head) => {
   }
   return prev;
 }
+
+// recap
