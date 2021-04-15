@@ -12,6 +12,7 @@ var removeDuplicates = function(s) {
     }
     return s;
 };
+
 const removeDuplicates = s => {
   const stack = [];
   for (let char of s) {
