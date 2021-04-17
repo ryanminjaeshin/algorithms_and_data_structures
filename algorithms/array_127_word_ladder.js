@@ -28,3 +28,7 @@
     }
     return 0;
 };
+
+// The time complexity is O(N * M * 26) where
+// N = number of words,
+// M = length of each word
