@@ -32,3 +32,21 @@ var spiralOrder = function(matrix) {
 
   return res;
 };
+
+var spiralOrder = function(matrix) {
+    let res = [];
+    while (matrix.length) {
+        const r = matrix.shift();
+        res.push(...r);
+        for (const m of matrix) {
+            let val = m.pop();
+            if (val) {
+                res.push(val);
+                m.reverse();
+            }
+        }
+        matrix.reverse();
+
+    }
+    return res;
+};
