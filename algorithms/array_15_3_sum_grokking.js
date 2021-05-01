@@ -1,20 +1,4 @@
-/*
-
-Problem Statement #
-Given an array of unsorted numbers, find all unique triplets in it that add up to zero.
-
-Example 1:
-
-Input: [-3, 0, 1, 2, -1, 1, -2]
-Output: [-3, 1, 2], [-2, 0, 2], [-2, 1, 1], [-1, 0, 1]
-Explanation: There are four unique triplets whose sum is equal to zero.
-Example 2:
-
-Input: [-5, 2, -1, -2, 3]
-Output: [[-5, 2, 3], [-2, -1, 3]]
-Explanation: There are two unique triplets whose sum is equal to zero.
-
-*/
+// amazon
 
 var threeSum = function(nums) {
 	var rtn = [];
@@ -136,4 +120,36 @@ const findPair = (arr, target, left, triplets) => {
 }
 
 // recap
+// recap
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+ var threeSum = function(nums) {
+    let res = [];
+    nums.sort((a,b)=>a-b)
+    for (let i = 0; i < nums.length; i ++) {
+        let left = i+1,
+            right = nums.length-1,
+            sum = 0;
+        while (left < right) {
+            sum = nums[i] + nums[left] + nums[right];
+            if (sum === 0) {
+                res.push([nums[i], nums[left], nums[right]]);
+                while (nums[left] == nums[left+1]) left ++;
+                while (nums[right] == nums[right-1]) right --;
+                left ++;
+                right --;
+            } else if (sum > 0) {
+                right --;
+            } else {
+                left ++
+            }
+        }
+        while (nums[i] == nums[i+1]) i++
+    }
+    return res;
+};
+
 // recap
