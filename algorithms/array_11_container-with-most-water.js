@@ -37,3 +37,20 @@ var maxArea = function(height) {
 };
 
 // recap
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+ var maxArea = function(height) {
+  let res = 0,
+      left = 0,
+      right = height.length - 1;
+  while (left < right) {
+      res = Math.max(res, Math.min(height[left], height[right]) * (right - left));
+      height[left] <= height[right] ? left ++ : right --;
+  }
+  return res;
+};
+
+// recap
