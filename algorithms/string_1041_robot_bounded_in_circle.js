@@ -43,9 +43,9 @@ var isRobotBounded = function(instructions) {
         dirs = [[0, 1], [1, 0], [0, -1], [-1, 0]];
     for (let j = 0; j < instructions.length; j ++) {
         if (instructions[j] == 'R') {
-            i = (i+1) % 4;
+            i = (i+1) % 4; // turn right
         } else if (instructions[j] == 'L') {
-            i = (i+3) % 4;
+            i = (i+3) % 4; // turn left
         } else {
             x += dirs[i][0];
             y += dirs[i][1];
