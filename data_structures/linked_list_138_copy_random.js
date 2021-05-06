@@ -1,3 +1,4 @@
+// amazon
 var copyRandomList = function(head) {
     if (!head) return head;
     let map = new Map();
