@@ -36,3 +36,36 @@
 };
 
 TC = O(N)
+
+var findMedianSortedArrays = function(nums1, nums2) {
+    let temp = [];
+    let p1 = 0;
+    let p2 = 0;
+    while (p1 < nums1.length && p2 < nums2.length) {
+        if (nums1[p1] < nums2[p2]) {
+            temp.push(nums1[p1]);
+            p1 ++
+        } else {
+            temp.push(nums2[p2]);
+            p2++
+        }
+    }
+    while (p1 < nums1.length) {
+        temp.push(nums1[p1])
+        p1 ++
+    }
+    while (p2 < nums2.length) {
+        temp.push(nums2[p2])
+        p2 ++
+    }
+    
+    let mid = 0 + Math.floor(temp.length / 2);
+    if (temp.length % 2 == 1) {
+        return temp[mid]
+    } else {
+        let med = (temp[mid-1] + temp[mid]) / 2
+        return med
+    }
+};
+
+// recap
