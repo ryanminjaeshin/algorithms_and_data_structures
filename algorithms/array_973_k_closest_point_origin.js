@@ -7,3 +7,5 @@
     let getDistance = a => (a[0] **2) + (a[1] **2)
     return points.sort((a, b) => getDistance(a) - getDistance(b)).slice(0, k)
 };
+
+// recap
