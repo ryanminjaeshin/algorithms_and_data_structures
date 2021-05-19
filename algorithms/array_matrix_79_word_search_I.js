@@ -30,3 +30,4 @@ var exist = function(board, word) {
 
 // Time O(m*n*4^l)
 // Space O(m*n + l)
+// recap
