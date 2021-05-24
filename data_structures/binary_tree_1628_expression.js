@@ -1,53 +1,36 @@
-var Node = function () {
-    if (this.constructor === Node) {
-      throw new Error('Cannot instanciate abstract class');
-    }
-  };
-  
-  Node.prototype.evaluate = function () {
-    throw new Error('Cannot call abstract method')
-  };
-  
-  class TreeNode extends Node {
-      constructor(val, left, right) {
-          super();
-          this.val = val ?? null;
-          this.left = left ?? null;
-          this.right = right ?? null; 
-      }    
-      
-      evaluate() {
-          if (!isNaN(this.val)) return this.val;
-          
-          let left = this.left.evaluate();
-          let right = this.right.evaluate();
-          
-          return eval(`${left}${this.val}${right}`);
-      }
+const opFunMap = {
+    "+": (x, y) => x + y,
+    "-": (x, y) => x - y,
+    "*": (x, y) => x * y,
+    "/": (x, y) => x / y,
   }
   
-  /**
-   * TreeBuilder class that returns the expression tree represnting it as a Node.
-   */
+  const Node = function(data, left, right) {
+    this.data = data;
+    this.left = left;
+    this.right = right;
+  };
   
-  class TreeBuilder{
-      /**
-       * @param {string[]} s
-       * @return {Node}
-       */
-      buildTree(postfix) {
-          let stack = [];
-          
-          for (let val of postfix) {            
-              if (isNaN(val)) {
-                  let num2 = stack.pop();
-                  let num1 = stack.pop();
-                  stack.push(new TreeNode(val, num1, num2));
-              } else {
-                  stack.push(new TreeNode(val))
-              }
-          }
-          
-          return stack.pop()
+  Node.prototype.evaluate = function() {
+    const { data, left, right } = this;
+    if (!left) return data;
+    
+    const opFun = opFunMap[data];
+    return opFun(left.evaluate(), right.evaluate());
+  };
+  
+  class TreeBuilder {
+    buildTree(postfix) {
+      const stk = [];
+      for(const p of postfix) {
+        if (p in opFunMap) {
+          // note left operand is pushed first
+          const right = stk.pop(), left = stk.pop();
+          stk.push(new Node(p, left, right));
+        } else {
+          stk.push(new Node(+p));
+        }
       }
+      return stk[stk.length - 1];
+    }
   }
