@@ -50,3 +50,5 @@ function explore(row, col, grid){
 	explore(row-1, col, grid)
 
 }
+
+//recap
