@@ -8,3 +8,4 @@ const isMirror = (t1, t2) => {
     
     return (t1.val === t2.val) && isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left)
 }
+// recap
