@@ -13,3 +13,4 @@ var minDepth = function(root) {
         depth ++
     }
 };
+// recap
