@@ -17,3 +17,4 @@ var myAtoi = function(s) {
     num = num * sign;
     return num <= min ? min : num >= max ? max : num;
 };
+// recap
