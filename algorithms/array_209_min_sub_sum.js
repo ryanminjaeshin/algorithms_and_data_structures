@@ -14,3 +14,4 @@ var minSubArrayLen = function(target, nums) {
     }
     return res == nums.length + 1 ? 0 : res;
 }
+// recap
