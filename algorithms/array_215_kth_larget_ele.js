@@ -52,3 +52,4 @@ function partition(arr, start, end) {
 function swap(arr, i, j) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
 }
+//recap
