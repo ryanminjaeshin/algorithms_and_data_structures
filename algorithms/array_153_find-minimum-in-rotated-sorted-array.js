@@ -9,3 +9,4 @@ function findMin(nums) {
   return nums[l];
 }
 // recap
+// recap
