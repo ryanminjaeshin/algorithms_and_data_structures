@@ -16,3 +16,4 @@ var findDuplicate = function(nums) {
 
   return slow;
 };
+// recap
