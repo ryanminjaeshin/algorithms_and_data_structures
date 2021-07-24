@@ -26,3 +26,4 @@ Logger.prototype.shouldPrintMessage = function(timestamp, message) {
 * var obj = new Logger()
 * var param_1 = obj.shouldPrintMessage(timestamp,message)
 */
+// recap
