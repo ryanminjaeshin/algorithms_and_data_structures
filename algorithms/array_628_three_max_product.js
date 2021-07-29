@@ -9,3 +9,4 @@
     let max2 = nums[len-1] * nums[len-2] * nums[len-3];
     return Math.max(max1, max2)
 };
+// recap
