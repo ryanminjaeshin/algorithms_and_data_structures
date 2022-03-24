@@ -53,7 +53,6 @@ var twoSum = function(nums, target) {
       if (map[num] >= 0) {
           return [i, map[num]]
       }
-
       map[target - num] = i;
   }
 
@@ -62,3 +61,15 @@ var twoSum = function(nums, target) {
 // Recap
 // recap
 // recap
+
+// nums = [2,7,11,15], target = 9
+
+var twoSum = function(nums, target) {
+  let map = {};
+  for (let i = 0; i < nums.length; i ++) {
+    let num = nums[i];
+    if (map[num] !== undefined) return [i, map[num]]
+    map[target-num] = i;
+  }
+
+};
