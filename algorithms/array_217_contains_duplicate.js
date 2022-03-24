@@ -84,3 +84,19 @@ var containsDuplicate = (nums) => {
 // Recap
 // recap
 // recap
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+ var containsDuplicate = function(nums) {
+    let map = {};
+    for (let num of nums) {
+      if (map[num]) return true;
+      map[num] = true;
+    }
+    return false;
+};
+var containsDuplicate = function(nums) {
+  return nums.length !== [...new Set(nums)].length;
+};
