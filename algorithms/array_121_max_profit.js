@@ -65,6 +65,8 @@ var maxProfit = function(prices) {
 
 // Recap
 
+// prices = [7,1,5,3,6,4]
+
 var maxProfit = function(prices) {
 
     var min = Infinity;
@@ -72,8 +74,8 @@ var maxProfit = function(prices) {
 
     for (var i = 0; i < prices.length; i ++) {
         var price = prices[i]
-        min = Math.min (min, price);
-        max = Math.max (max, price - min);
+        min = Math.min (min, price); // 7 1 1 1 1 1
+        max = Math.max (max, price - min); // 0 0 4 4 5 5 M
     }
 
     return max;
@@ -83,3 +85,15 @@ var maxProfit = function(prices) {
 // Recap
 // recap
 // recap
+
+var maxProfit = function(prices) {
+    let min = Infinity;
+    let max = -Infinity;
+    
+    for (let price of prices) {
+        min = Math.min(min, price);
+        max = Math.max(max, price - min);
+    }
+    
+    return max;
+};
