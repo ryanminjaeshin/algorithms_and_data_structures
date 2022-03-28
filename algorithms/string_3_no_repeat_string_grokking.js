@@ -127,6 +127,8 @@ const non_repeat_substring = function(str) {
  * @param {string} s
  * @return {number}
  */
+
+// S = 'abcda'
  var lengthOfLongestSubstring = function(s) {
     let map = {};
     let result = 0;
