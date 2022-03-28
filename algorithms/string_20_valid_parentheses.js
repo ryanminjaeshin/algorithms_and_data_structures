@@ -80,3 +80,25 @@ var isValid = function(s) {
 // recap
 // recap
 // recap
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ var isValid = function(s) {
+    let stack = [];
+    for (let paren of s) {
+        if (paren == '[') {
+            stack.push(']')
+        } else if (paren == '(') {
+            stack.push(')')
+        } else if (paren == '{') {
+            stack.push('}')
+        } else {
+            if (stack.pop() !== paren) {
+                return false;
+            }
+        }
+    }
+    return stack.length == 0;
+};
