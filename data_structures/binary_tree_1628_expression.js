@@ -21,7 +21,7 @@ const opFunMap = {
   
   class TreeBuilder {
     buildTree(postfix) {
-      const stk = [];
+      const stk = [];                       
       for(const p of postfix) {
         if (p in opFunMap) {
           // note left operand is pushed first

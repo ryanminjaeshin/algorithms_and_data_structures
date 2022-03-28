@@ -122,3 +122,26 @@ const non_repeat_substring = function(str) {
 };
 
 // recap
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var lengthOfLongestSubstring = function(s) {
+    let map = {};
+    let result = 0;
+    let windowStart = 0;
+    for (let windowEnd = 0; windowEnd < s.length; windowEnd ++) {
+      let right = s[windowEnd];
+      if (!map[right]) map[right] = 0;
+      map[right] += 1;
+
+      while (map[right] > 1) {
+        let left = s[windowStart];
+        map[left] -= 1;
+        windowStart += 1;
+      }
+      result = Math.max(result, windowEnd - windowStart + 1);
+    }
+    return result;
+};
