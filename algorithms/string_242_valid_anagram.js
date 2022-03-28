@@ -57,3 +57,11 @@ var isAnagram = function(s, t) {
 // Recap
 // recap
 // recap
+
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    let map = {};
+    s.split('').map(x => map[x] = map[x] ? map[x] + 1 : 1);
+    t.split('').map(x => map[x] = map[x] ? map[x] - 1 : 1);
+    return Object.values(map).every(y => y == 0);
+};
