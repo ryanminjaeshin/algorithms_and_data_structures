@@ -80,3 +80,33 @@ const length_of_longest_substring = function(str, k) {
 
 // recap
 // recap
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+
+// "AABABBA" k=1
+var characterReplacement = function(s, k) {
+    let map = {};
+    let windowStart = 0;
+    let result = 0;
+    let maxRepeat = 0;
+    for (let windowEnd = 0; windowEnd < s.length; windowEnd ++) {
+        let right = s[windowEnd]; 
+        if (!map[right]) map[right] = 0;
+        map[right] += 1;
+        
+        maxRepeat = Math.max(maxRepeat, map[right]);
+
+        while (windowEnd-windowStart+1-maxRepeat > k) {
+            let left = s[windowStart];
+            map[left] -= 1;
+            windowStart += 1;
+        };
+        result = Math.max(result, windowEnd - windowStart + 1);
+    }
+    
+    return result;
+};
