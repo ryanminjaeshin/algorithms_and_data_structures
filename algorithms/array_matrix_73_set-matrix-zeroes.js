@@ -28,3 +28,4 @@ const setMatrix = (matrix, r, c) => {
   }
   matrix[r][c] = 0;
 }
+// recap
